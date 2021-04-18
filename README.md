@@ -53,6 +53,12 @@ install.
 pip install pipenv
 ```
 
+## Install nvm and Node.js
+
+See NVM's [page](https://github.com/nvm-sh/nvm) for install script (this changes from time to time).
+
+## Docker and Docker Desktop
+
 ## Vim and Neovim Setup
 
 Install `Vim-Plug` for Vim:
