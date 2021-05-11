@@ -113,3 +113,12 @@ There's also another command if the first one alone doesn't work:
 ```sh
 sudo chmod -R g+rwx /opt/homebrew/*
 ```
+
+## Updating Pyenv
+
+Run `cd $(pyenv root)` to go to the location where pyenv was cloned.
+
+This will update the version list that you can see with `pyenv install --list`.
+
+Once the local repo has been updated, you can `pyenv install` whichever version
+you want.
