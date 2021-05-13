@@ -84,6 +84,27 @@ git clone git@github.com:Lazytangent/nvim-conf.git ~/.config/nvim
 nvim +PlugInstall
 ```
 
+### Installing the nightly version of Neovim
+
+On Mac, install luajit and luarocks first:
+
+```sh
+brew install --HEAD luajit luarocks
+```
+
+If it gives you an error about them being already installed, run
+
+```sh
+brew unlink <package_name>
+```
+
+Then, run the install command again. You might have to do that for Neovim as
+well.
+
+```sh
+brew install --HEAD neovim
+```
+
 ### Minimal Vim config
 
 ```sh
@@ -122,3 +143,11 @@ This will update the version list that you can see with `pyenv install --list`.
 
 Once the local repo has been updated, you can `pyenv install` whichever version
 you want.
+
+## Homebrew packages
+
+Other Homebrew packages to install are:
+
+* `exa`
+* `bat`
+* `the_silver_searcher`
