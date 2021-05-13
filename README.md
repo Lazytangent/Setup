@@ -105,6 +105,65 @@ well.
 brew install --HEAD neovim
 ```
 
+### Installing Language Servers for Nvim-LspConfig
+
+#### clangd
+
+```sh
+brew install llvm
+```
+
+Then, in your `.zshrc`, add a line to add the location of `llvm/bin` to the
+path.
+
+On Intel Macs:
+
+```sh
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+```
+
+On Apple Silicon Macs:
+
+```sh
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+```
+
+#### html
+
+```sh
+npm install -g vscode-html-languageserver-bin
+```
+
+#### jedi language server
+
+```sh
+pip install -U jedi-language-server
+```
+
+#### JSON
+
+```sh
+npm install -g vscode-json-languageserver
+```
+
+#### pyright
+
+```sh
+npm install -g pyright
+```
+
+#### TSServer
+
+```sh
+npm install -g typescript typescript-language-server
+```
+
+#### Vim
+
+```sh
+npm install -g vim-language-server
+```
+
 ### Minimal Vim config
 
 ```sh
