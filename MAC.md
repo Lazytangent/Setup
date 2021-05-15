@@ -61,28 +61,62 @@ See NVM's [page](https://github.com/nvm-sh/nvm) for install script (this changes
 
 ## Vim and Neovim Setup
 
+### Neovim Lua config
+
+Clone the repo
+
+```sh
+git clone git@github.com:Layztangent/nvim-conf.git ~/.config/nvim
+```
+
+Run Neovim to auto-install Packer.nvim
+
+```sh
+nvim
+```
+
+Run the compile command in Neovim
+
+```viml
+:PackerCompile
+```
+
+Run the Packer install command in Neovim
+
+```viml
+:PackerInstall
+```
+
+Update package list when necessary
+
+```viml
+:PackerSync
+```
+
 Skip to next subsection for minimal Vim config.
 
-Install `Vim-Plug` for Vim:
+Deprecated:
 
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-Install `Vim-Plug` for Neovim:
-
-```sh
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-
-Clone the Neovim config files to `~/.config/nvim`:
-
-```sh
-git clone git@github.com:Lazytangent/nvim-conf.git ~/.config/nvim
-nvim +PlugInstall
-```
+> Install `Vim-Plug` for Vim:
+>
+> ```sh
+> curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+>     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+> ```
+>
+> Install `Vim-Plug` for Neovim:
+>
+> ```sh
+> sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+>        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+> ```
+>
+> Clone the Neovim config files to `~/.config/nvim`:
+>
+> ```sh
+> git clone git@github.com:Lazytangent/nvim-conf.git ~/.config/nvim
+> nvim +PlugInstall
+> ```
 
 ### Installing the nightly version of Neovim
 
