@@ -1,5 +1,7 @@
 # Some setup/config for Mac
 
+## Change some default settings on MacOS
+
 ```sh
 # Set up a Screenshots folder
 cd # Go home
