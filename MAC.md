@@ -141,6 +141,14 @@ well.
 brew install --HEAD neovim
 ```
 
+### Vim-ALE Setup
+
+To make use of the ALE fixers, you'll need to install them on your machine.
+
+```sh
+pip install autopep8
+```
+
 ### Installing Language Servers for Nvim-LspConfig
 
 #### clangd
