@@ -247,6 +247,19 @@ This will update the version list that you can see with `pyenv install --list`.
 Once the local repo has been updated, you can `pyenv install` whichever version
 you want.
 
+## Antigen
+
+```sh
+cd
+curl -L git.io/antigen > antigen.zsh
+```
+
+## TMUX Plugins
+
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## Homebrew packages
 
 Other Homebrew packages to install are:
@@ -254,3 +267,52 @@ Other Homebrew packages to install are:
 * `exa`
 * `bat`
 * `the_silver_searcher`
+* `starship`
+* `postgresql`
+* `tmux`
+* `zoxide`
+* `rbenv`
+* `fzf`
+
+### Universal Ctags
+
+```sh
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+```
+
+### Homebrew Casks
+
+```sh
+brew install --cask
+```
+
+* `rectangle`
+* `postbird`
+* `iterm2`
+
+## Fix Compaudit/Compinit
+
+When getting "insecure directories messaged"
+
+```sh
+compaudit | xargs chmod g-w
+```
+
+## Fonts
+
+* JetBrains Mono
+* MesloLGS NF
+
+## Antigen Error
+
+Antigen: Another process is running.
+
+```sh
+antigen-reset
+```
+
+## Git Config
+
+```sh
+git config --list --show-origin
+```
