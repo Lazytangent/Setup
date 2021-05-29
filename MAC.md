@@ -120,92 +120,12 @@ Deprecated:
 > nvim +PlugInstall
 > ```
 
-### Installing the nightly version of Neovim
-
-On Mac, install luajit and luarocks first:
-
-```sh
-brew install --HEAD luajit luarocks
-```
-
-If it gives you an error about them being already installed, run
-
-```sh
-brew unlink <package_name>
-```
-
-Then, run the install command again. You might have to do that for Neovim as
-well.
-
-```sh
-brew install --HEAD neovim
-```
-
 ### Vim-ALE Setup
 
 To make use of the ALE fixers, you'll need to install them on your machine.
 
 ```sh
 pip install autopep8
-```
-
-### Installing Language Servers for Nvim-LspConfig
-
-#### clangd
-
-```sh
-brew install llvm
-```
-
-Then, in your `.zshrc`, add a line to add the location of `llvm/bin` to the
-path.
-
-On Intel Macs:
-
-```sh
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-```
-
-On Apple Silicon Macs:
-
-```sh
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-```
-
-#### html
-
-```sh
-npm install -g vscode-html-languageserver-bin
-```
-
-#### jedi language server
-
-```sh
-pip install -U jedi-language-server
-```
-
-#### JSON
-
-```sh
-npm install -g vscode-json-languageserver
-```
-
-#### pyright
-
-```sh
-npm install -g pyright
-```
-
-#### TSServer
-
-```sh
-npm install -g typescript typescript-language-server
-```
-
-#### Vim
-
-```sh
-npm install -g vim-language-server
 ```
 
 ### Minimal Vim config
@@ -238,7 +158,7 @@ There's also another command if the first one alone doesn't work:
 sudo chmod -R g+rwx /opt/homebrew/*
 ```
 
-## Updating Pyenv
+## Updating Pyenv's Python Version List
 
 Run `cd $(pyenv root)` to go to the location where pyenv was cloned.
 
@@ -259,6 +179,12 @@ curl -L git.io/antigen > antigen.zsh
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+Be sure to grab the `.tmux.conf` from the dot-files repo.
+
+Use `<C-A>I` to install plugins.
+
+Use `<C-A>R` to reload config file.
 
 ## Homebrew packages
 
