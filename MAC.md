@@ -1,5 +1,15 @@
 # Some setup/config for Mac
 
+* [Change Some Defaults](#change-some-default-settings-on-macos)
+* [Homebrew](#install-homebrew)
+* [Dot Files](#dot-files)
+* [Python](#install-pyenv-and-pipenv)
+* [Node.js](#install-nvm-and-nodejs)
+* [Docker](#docker-and-docker-desktop)
+* [Vim and Neovim](#vim-and-neovim-setup)
+* [M1 Setup](#m1-mac-stuff)
+* [Antigen](#antigen)
+
 ## Change some default settings on MacOS
 
 ```sh
