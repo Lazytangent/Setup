@@ -9,6 +9,12 @@
 * [Vim and Neovim](#vim-and-neovim-setup)
 * [M1 Setup](#m1-mac-stuff)
 * [Antigen](#antigen)
+* [TMUX Plugins](#tmux-plugins)
+* [Homebrew packages](#homebrew-packages)
+* [Compaudit/Compinit](#fix-compaudit-compinit)
+* [Fonts](#fonts)
+* [Antigen Error](#antigen-error)
+* [Git](#git-config)
 
 ## Change some default settings on MacOS
 
