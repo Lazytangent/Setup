@@ -11,7 +11,7 @@
 * [Antigen](#antigen)
 * [TMUX Plugins](#tmux-plugins)
 * [Homebrew packages](#homebrew-packages)
-* [Compaudit/Compinit](#fix-compaudit-compinit)
+* [Compaudit/Compinit](#fix-compauditcompinit)
 * [Fonts](#fonts)
 * [Antigen Error](#antigen-error)
 * [Git](#git-config)
