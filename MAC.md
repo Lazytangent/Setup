@@ -68,15 +68,10 @@ arch
 ```
 
 If the output is `i386`, meaning it's running the `x86` version of the shell,
-then add the following to the top of your shell config file, whether that's your
-`.bashrc` or `.zshrc`.
+change it with the following command:
 
 ```sh
-# Switch to an arm64e shell by default
-if [ `machine` != arm64e ]; then
-    echo 'Execing arm64 shell'
-    exec arch -arm64 bash
-fi
+arch -x86_64 zsh
 ```
 
 Check out `https://github.com/Lazytangent/dot-config` for the dot files from the
