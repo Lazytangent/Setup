@@ -2,6 +2,7 @@
 
 * [Change Some Defaults](#change-some-default-settings-on-macos)
 * [Homebrew](#install-homebrew)
+* [Alacritty](#setup-alacritty)
 * [Dot Files](#dot-files)
 * [Python](#install-pyenv-and-pipenv)
 * [Node.js](#install-nvm-and-nodejs)
@@ -49,6 +50,37 @@ git config --global core.editor "<editor>"
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+## Setup Alacritty
+
+Install Alacritty as a Homebrew Cask
+
+```sh
+brew install --cask alacritty
+```
+
+Alacritty might start with the `x86` version of the shell, probably in `zsh`. On
+an M1 Mac, ideally it would start in the `arm64` version of the shell. To check,
+run
+
+```sh
+arch
+```
+
+If the output is `i386`, meaning it's running the `x86` version of the shell,
+then add the following to the top of your shell config file, whether that's your
+`.bashrc` or `.zshrc`.
+
+```sh
+# Switch to an arm64e shell by default
+if [ `machine` != arm64e ]; then
+    echo 'Execing arm64 shell'
+    exec arch -arm64 bash
+fi
+```
+
+Check out `https://github.com/Lazytangent/dot-config` for the dot files from the
+`~/.config` directory.
 
 ## Dot Files
 
