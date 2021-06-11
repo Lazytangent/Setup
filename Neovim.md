@@ -71,3 +71,10 @@ rustup +nightly component add rust-analyzer-preview
 #### TSServer
 #### Vim
 #### YAML
+
+## Nvim-Treesitter Troubleshooting
+
+If you get an error about something, something, "wrong architecture".
+
+* Try running `:TSUninstall all`, then reinstall all parsers with `:TSInstall
+    all`
