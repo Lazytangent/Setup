@@ -36,8 +36,23 @@ npm i -g @angular/language-server bash-language-server \
 
 ```sh
 pip install -U jedi-language-server
+```
 
+```sh
 cargo install --git https://github.com/latex-lsp/texlab.git --locked
+```
+
+* Rust Language Server (Rust needs to be installed)
+
+Download the binary from `https://github.com/rust-analyzer/rust-analyzer` and
+place in PATH.
+```sh
+rustup component add rust-src
+```
+
+Or add it via `rustup`
+```sh
+rustup +nightly component add rust-analyzer-preview
 ```
 
 #### Angular
