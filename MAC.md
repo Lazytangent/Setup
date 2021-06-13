@@ -45,6 +45,11 @@ git config --global user.name "<username>"
 git config --global core.editor "<editor>"
 ```
 
+```sh
+# Set vi bindings in MacOS
+set -o vi
+```
+
 ## Install Homebrew
 
 ```sh
@@ -285,3 +290,5 @@ antigen-reset
 ```sh
 git config --list --show-origin
 ```
+
+## Shortcuts
