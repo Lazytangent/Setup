@@ -247,6 +247,7 @@ Other Homebrew packages to install are:
 * `zoxide`
 * `rbenv`
 * `fzf`
+* `autoenv`
 
 ### Universal Ctags
 
