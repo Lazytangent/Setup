@@ -25,9 +25,8 @@ brew install --HEAD neovim
 
 ```sh
 npm i -g @angular/language-server bash-language-server \
-    vscode-css-languageserver-bin dockerfile-language-server-nodejs \
-    graphql-language-service-cli vscode-html-languageserver-bin \
-    vscode-json-languageserver pyright typescript \
+    dockerfile-language-server-nodejs pyright typescript \
+    graphql-language-service-cli vscode-langservers-extracted \
     typescript-language-server vim-language-server \
     sql-language-server yaml-language-server
 ```
