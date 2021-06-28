@@ -28,3 +28,20 @@ sudo apt update
 ```sh
 sudo apt upgrade
 ```
+
+## Clock Drift
+
+Occasionally, the internal clock for WSL drifts away from the clock in Windows.
+This usually causes some issues when using `apt` to update the package lists.
+
+A quick fix is to use `hwclock`:
+
+```sh
+sudo hwclock -s
+```
+
+Another fix is to use the `ntpdate` package available in `apt`:
+
+```sh
+sudo ntpdate time time.windows.com
+```
