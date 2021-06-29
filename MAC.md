@@ -3,6 +3,7 @@
 * [Change Some Defaults](#change-some-default-settings-on-macos)
 * [Homebrew](#install-homebrew)
 * [Alacritty](#setup-alacritty)
+* [Antigen](#install-antigen)
 * [Dot Files](#dot-files)
 * [Python](#install-pyenv-and-pipenv)
 * [Node.js](#install-nvm-and-nodejs)
@@ -16,6 +17,7 @@
 * [Fonts](#fonts)
 * [Antigen Error](#antigen-error)
 * [Git](#git-config)
+* [SSH](#setting-up-ssh)
 
 ## Change some default settings on MacOS
 
@@ -89,6 +91,8 @@ Clone the dot-files repository.
 ```sh
 git clone git@github.com:Lazytangent/dot-files.git
 ```
+
+## Install Antigen
 
 ## Install Pyenv and Pipenv
 
@@ -264,6 +268,8 @@ brew install --cask
 * `rectangle`
 * `postbird`
 * `iterm2`
+* `spotify`
+* `zoom`
 
 ## Fix Compaudit/Compinit
 
@@ -293,3 +299,5 @@ git config --list --show-origin
 ```
 
 ## Shortcuts
+
+## Setting up SSH
