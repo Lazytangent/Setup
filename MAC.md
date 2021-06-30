@@ -301,3 +301,5 @@ git config --list --show-origin
 ## Shortcuts
 
 ## Setting up SSH
+
+`~/.ssh/authorized_keys`
