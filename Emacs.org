@@ -1,0 +1,18 @@
+* Doom Emacs Setup Notes
+
+** Issue with running ~doom sync~
+
+#+BEGIN_SRC shell
+    Message: Symbol's function definition is void
+    Data: (void-function . straight--process-buffer)
+#+END_SRC
+
+Run the following to fix the issue
+#+BEGIN_SRC shell
+sudo rm -r ~/.emacs.d/.local/straight/repos/straight.el
+#+END_SRC shell
+
+Then, run the following to recreate the missing files
+#+BEGIN_SRC shell
+doom sync -up
+#+END_SRC
