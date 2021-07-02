@@ -303,3 +303,14 @@ git config --list --show-origin
 ## Setting up SSH
 
 `~/.ssh/authorized_keys`
+## Xcode beta and two versions
+
+Switch to the version of Xcode you want to use:
+```sh
+sudo xcode-select -switch ~/Applications/Xcode-beta.app/
+```
+
+You might have to sign the permissions:
+```sh
+sudo xcodebuild -license accept
+```
