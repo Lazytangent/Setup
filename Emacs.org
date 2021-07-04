@@ -16,3 +16,15 @@ Then, run the following to recreate the missing files
 #+BEGIN_SRC shell
 doom sync -up
 #+END_SRC
+** Table of commands
+
+| Keybind   | Command          |
+|-----------+------------------|
+| =SPC h t= | 'M-x load-theme' |
+| =SPC q r= | 'Reload Emacs'   |
+
+** Run Emacs in the terminal without opening a Window instance
+
+#+BEGIN_SRC shell
+emacs -nw
+#+END_SRC
