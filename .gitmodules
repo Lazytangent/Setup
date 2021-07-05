@@ -1,0 +1,5 @@
+[submodule "Emacs-notes"]
+	path = Emacs-notes
+	url = git@github.com:Lazytangent/Emacs-notes.git
+[submodule "git@github.com:Lazytangent/emacs-notes.git"]
+	url = Emacs-notes
