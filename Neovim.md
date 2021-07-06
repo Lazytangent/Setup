@@ -77,3 +77,12 @@ If you get an error about something, something, "wrong architecture".
 
 * Try running `:TSUninstall all`, then reinstall all parsers with `:TSInstall
     all`
+## Octo.nvim
+
+This plugin requires that you have the GitHub CLI command `gh` installed.
+
+On devices with Homebrew installed, you can run
+
+```sh
+brew install gh
+```
