@@ -223,7 +223,7 @@ you want.
 
 ```sh
 cd
-curl -L git.io/antigen > antigen.zsh
+curl -L git.io/antigen > ~/antigen.zsh
 ```
 
 ## TMUX Plugins
@@ -252,6 +252,7 @@ Other Homebrew packages to install are:
 * `rbenv`
 * `fzf`
 * `autoenv`
+* `gh`
 
 ### Universal Ctags
 
@@ -270,6 +271,7 @@ brew install --cask
 * `iterm2`
 * `spotify`
 * `zoom`
+* `beekeeper-studio`
 
 ## Fix Compaudit/Compinit
 

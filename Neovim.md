@@ -8,8 +8,8 @@ brew install --HEAD luajit luarocks
 
 If it gives you an error about them being already installed, run
 
-```sh
 brew unlink <package_name>
+```sh
 ```
 
 Then, run the install for those packages again. You might have to do that for
@@ -52,6 +52,25 @@ rustup component add rust-src
 Or add it via `rustup`
 ```sh
 rustup +nightly component add rust-analyzer-preview
+```
+
+Install `rust-analyzer` into `~/.local/bin` with
+
+Make sure the `~/.local/bin` directory exists first.
+
+```sh
+mkdir -p ~/.local/bin
+```
+
+```sh
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-<version>.gz \
+    | gunzip -c - > ~/.local/bin/rust-analyzer
+```
+
+Let the script be executable
+
+```sh
+chmod +x ~/.local/bin/rust-analyzer
 ```
 
 #### Angular
