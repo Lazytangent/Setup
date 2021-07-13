@@ -8,8 +8,8 @@ brew install --HEAD luajit luarocks
 
 If it gives you an error about them being already installed, run
 
-brew unlink <package_name>
 ```sh
+brew unlink <package_name>
 ```
 
 Then, run the install for those packages again. You might have to do that for
