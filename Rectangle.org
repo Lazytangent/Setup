@@ -1,0 +1,22 @@
+#+TITLE: Rectangle Keybinds
+
+| Command             | Keystroke                      |
+| ------------------- | ---------                      |
+| Left Half           | ~<CTRL> <OPT> <LEFT>~          |
+| Right Half          | ~<CTRL> <OPT> <RIGHT>~         |
+| Center Half         | ~<CTRL> <OPT> <SHIFT> .~       |
+| Top Half            | ~<CTRL> <OPT> <UP>~            |
+| Bottom Half         | ~<CTRL> <OPT> <DOWN>~          |
+| ------------------- | ------------------------       |
+| Top Left            | ~<CTRL> <OPT> U~               |
+| Top Right           | ~<CTRL> <OPT> I~               |
+| Bottom Left         | ~<CTRL> <OPT> J~               |
+| Bottom Right        | ~<CTRL> <OPT> K~               |
+| ------------------- | ------------------------       |
+| Maximize            | ~<CTRL> <OPT> <ENTER>~         |
+| Almost Maximize     | ~<CTRL> <OPT> <SHIFT> <SPACE>~ |
+| Maximize Height     | ~<CTRL> <OPT> <SHIFT> <ENTER>~ |
+| Make Smaller        | ~<CTRL> <OPT> -~               |
+| Make Larger         | ~<CTRL> <OPT> =~               |
+| Center              | ~<CTRL> <OPT> C~               |
+| Restore             | ~<CTRL> <OPT> <BACKSPACE>~     |
