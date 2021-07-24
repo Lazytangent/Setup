@@ -1,14 +1,14 @@
 # Manjaro Setup
 
 * [Basic Commands](#basic-commands)
-* [[GitHub]]
-* [[Starship.rs]]
-* [[Antigen Zsh]]
-* [[Set up for AUR packages]]
-* [[pyenv]]
-* [[nvm]]
-* [[rbenv]]
-* [[Neovim]]
+* [GitHub](#github)
+* [Starship.rs](#starshiprs)
+* [Antigen Zsh](#antigen-zsh)
+* [Set up for AUR packages](#set-up-for-aur-packages)
+* [pyenv](#pyenv)
+* [nvm](#nvm)
+* [rbenv](#rbenv)
+* [Neovim](#neovim)
 
 ## Basic Commands
 
@@ -32,8 +32,8 @@ sudo pacman -S <name>
 
 ## GitHub
 
-* [SSH]
-* [CLI]
+* [SSH](#ssh)
+* [CLI](#cli)
 
 ### SSH
 
