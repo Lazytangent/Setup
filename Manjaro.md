@@ -1,6 +1,6 @@
 # Manjaro Setup
 
-* [[Basic Commands]]
+* [Basic Commands](#basic-commands)
 * [[GitHub]]
 * [[Starship.rs]]
 * [[Antigen Zsh]]
