@@ -130,7 +130,7 @@ eval "$(pyenv init -)"
 
 ## rbenv
 
-See [[Set up for AUR packages]] for initial setup
+See [Set up for AUR packages](#set-up-for-aur-packages) for initial setup
 
 ```sh
 git clone https://aur.archlinux.org/rbenv.git
