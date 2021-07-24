@@ -1,5 +1,25 @@
 # Manjaro Setup
 
+## Basic Commands
+
+Update package list and upgrade outdated packages
+
+```sh
+sudo pacman -Syu
+```
+
+Search for a `name` in the package manager
+
+```sh
+sudo pacman -Ss <name>
+```
+
+Install a package by `name`
+
+```sh
+sudo pacman -S <name>
+```
+
 ## Installing Neovim Nightly
 
 First, install the prerequisites:
