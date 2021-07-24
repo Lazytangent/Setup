@@ -159,6 +159,25 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | 
 
 ## nvm
 
+See the [nvm repository](https://github.com/nvm-sh/nvm#installing-and-updating)
+on GitHub to find the `curl` command to install nvm, as it changes over time.
+
+## tmux
+
+Install tmux
+
+```sh
+sudo pacman -S tmux
+```
+
+Install tmux plugin manager
+
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+## Other packages to install
+
 ## Installing Neovim Nightly
 
 First, install the prerequisites:
