@@ -1,3 +1,5 @@
+# Manjaro Setup
+
 ## Installing Neovim Nightly
 
 First, install the prerequisites:
