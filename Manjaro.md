@@ -184,6 +184,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 * `bat`
 * `postgresql`
 * `tmux`
+* `alacritty`
 
 ## Installing Neovim Nightly
 
