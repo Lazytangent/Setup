@@ -178,6 +178,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Other packages to install
 
+### Installable with `pacman`
+
+* `exa`
+* `bat`
+* `postgresql`
+* `tmux`
+
 ## Installing Neovim Nightly
 
 First, install the prerequisites:
