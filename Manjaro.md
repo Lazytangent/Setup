@@ -32,8 +32,8 @@ sudo pacman -S <name>
 
 ## GitHub
 
-* [[SSH]]
-* [[CLI]]
+* [SSH]
+* [CLI]
 
 ### SSH
 
