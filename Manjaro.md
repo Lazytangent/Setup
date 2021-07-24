@@ -11,7 +11,7 @@ sudo pacman -Syu
 Search for a `name` in the package manager
 
 ```sh
-sudo pacman -Ss <name>
+pacman -Ss <name>
 ```
 
 Install a package by `name`
