@@ -94,6 +94,10 @@ git clone git@github.com:Lazytangent/dot-files.git
 
 ## Install Antigen
 
+```sh
+curl -L git.io/antigen > ~/antigen.zsh
+```
+
 ## Install Pyenv and Pipenv
 
 ```sh
