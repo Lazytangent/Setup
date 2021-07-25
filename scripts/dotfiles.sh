@@ -37,3 +37,14 @@ fi
 
 # Grab antigen setup file if necessary
 [[ ! -f ~/antigen.zsh ]] && curl -L git.io/antigen > ~/antigen.zsh
+
+# Grab correct .tmux.conf file
+if [[ $system == manjaro ]] || [[ $system == ubuntu ]]; then
+  ln -s ~/dotfiles/universal/tmux/linux.tmux.conf ~/.tmux.conf
+else
+  ln -s ~/dotfiles/universal/tmux/.tmux.conf ~/.tmux.conf
+fi
+
+# Grab tmux plugin manager if need be
+[[ ! -d ~/.tmux/plugins/tpm ]] && \
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
