@@ -6,3 +6,7 @@ when configuring a new computer. The kinds of operating systems in mind are:
 * MacOS
 * Ubuntu (both normal and on WSL)
 * Manjaro
+
+## TODO
+
+* Prepare a script to help set up Linux OS's
