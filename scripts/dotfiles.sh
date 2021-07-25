@@ -4,9 +4,7 @@ set -e
 
 # Clone down Lazytangent/dotfiles if needed
 cd ~
-if [[ ! -d dotfiles ]]; then
-  gh repo clone Lazytangent/dotfiles ~/dotfiles
-fi
+[[ ! -d dotfiles ]] && gh repo clone Lazytangent/dotfiles ~/dotfiles
 
 # Get system choice
 echo "Systems are: m1, mbp16, mbp13, mbair, manjaro, ubuntu"
@@ -48,3 +46,15 @@ fi
 # Grab tmux plugin manager if need be
 [[ ! -d ~/.tmux/plugins/tpm ]] && \
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Get dot config files
+if [[ $system == manjaro ]] || [[ $system == ubuntu ]]; then
+  gh repo clone Lazytangent/dot-config ~/dot-config
+  ln -s ~/dot-config/alacritty ~/.config/
+  ln -s ~/dot-config/starship.toml ~/.config/starship.toml
+else
+  gh repo clone Lazytangent/dot-config ~/.config
+fi
+
+# Get nvim files
+gh repo clone Lazytangent/nvim-conf ~/.config/nvim
