@@ -11,7 +11,7 @@ echo "Systems are: m1, mbp16, mbp13, mbair, manjaro, ubuntu"
 read -p "Enter system: " system
 
 # Check for pre-existing zsh config files
-if [[ -f ~/.zshrc ]]; then
+if [[ -f ~/.zshrc ]] || [[ -L ~/.zshrc ]]; then
   cp ~/.zshrc ~/.zshrc.bak
   rm ~/.zshrc
   rm ~/.zsh_aliases
@@ -36,6 +36,11 @@ fi
 # Grab antigen setup file if necessary
 [[ ! -f ~/antigen.zsh ]] && curl -L git.io/antigen > ~/antigen.zsh
 
+# Remove existing tmux conf
+if [[ -f ~/.tmux.conf ]] || [[ -L ~/.tmux.conf ]]; then
+  rm ~/.tmux.conf
+fi
+
 # Grab correct .tmux.conf file
 if [[ $system == manjaro ]] || [[ $system == ubuntu ]]; then
   ln -s ~/dotfiles/universal/tmux/linux.tmux.conf ~/.tmux.conf
@@ -49,7 +54,9 @@ fi
 
 # Get dot config files
 if [[ $system == manjaro ]] || [[ $system == ubuntu ]]; then
-  gh repo clone Lazytangent/dot-config ~/dot-config
+  if [[ ! -d ~/dot-config ]]; then
+    gh repo clone Lazytangent/dot-config ~/dot-config
+  fi
   ln -s ~/dot-config/alacritty ~/.config/
   ln -s ~/dot-config/starship.toml ~/.config/starship.toml
 else
