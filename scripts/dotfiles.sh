@@ -54,9 +54,7 @@ fi
 
 # Get dot config files
 if [[ $system == manjaro ]] || [[ $system == ubuntu ]]; then
-  if [[ ! -d ~/dot-config ]]; then
-    gh repo clone Lazytangent/dot-config ~/dot-config
-  fi
+  [[ ! -d ~/dot-config ]] && gh repo clone Lazytangent/dot-config ~/dot-config
   ln -s ~/dot-config/alacritty ~/.config/
   ln -s ~/dot-config/starship.toml ~/.config/starship.toml
 else
