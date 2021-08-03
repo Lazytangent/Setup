@@ -41,6 +41,17 @@ pip install -U jedi-language-server
 cargo install --git https://github.com/latex-lsp/texlab.git --locked
 ```
 
+```sh
+brew install efm-langserver
+```
+
+Using go instead:
+
+```sh
+go get github.com/mattn/efm-langserver
+```
+
+
 * Rust Language Server (Rust needs to be installed)
 
 Download the binary from `https://github.com/rust-analyzer/rust-analyzer` and
