@@ -1,0 +1,19 @@
+#+TITLE: JavaScript Snippets
+
+| Snippet | Expansion                                  |
+|---------+--------------------------------------------|
+| ~a~     | ~await $0~                                 |
+| ~apa~   | ~await Promise.all($1)~                    |
+| ~pe~    | ~process.env~                              |
+| ~pa~    | ~Promise.all~                              |
+| ~np~    | ~new Promise~                              |
+| ~desc~  | ~describe~                                 |
+| ~dt~    | =describe top level=                       |
+| ~it~    | ~it(${1:description}, async () => { $0 })~ |
+
+| Snippet | Expansion                                    |
+|---------+----------------------------------------------|
+| ~rq~    | ~require('$1')~                              |
+| ~cr~    | ~const ${1:module} = require('${1:module}')~ |
+| ~em~    | ~exports.member~                             |
+| ~me~    | ~module.exports~                             |
