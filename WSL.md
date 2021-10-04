@@ -2,13 +2,23 @@
 
 * Install and Set Up WSL
 * NVM and Node.js
-* Python
-* Ruby
+* Pyenv and Python
+* Rbenv and Ruby
 * PostgreSQL
 * VSCode
 * Vim
 * Neovim?
+* GitHub CLI
 * Set up SSH and GitHub on both WSL and Powershell
+
+## Install and Set Up WSL
+
+If Windows is up-to-date, then running `wsl --install` from an elevated
+PowerShell instance should do the trick.
+
+If not, then follow Microsoft's old instructions for installing WSL. Make sure
+to install WSL2 instead of WSL1, as there are some features made available by
+the upgrade.
 
 ## Git
 
