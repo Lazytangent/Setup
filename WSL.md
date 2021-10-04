@@ -105,6 +105,67 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root"/plugins/ruby-bu
 
 [ruby-build]: https://github.com/rbenv/ruby-build#installation
 
+## PostgreSQL
+
+Follow [Microsoft's instructions on setting up a database in
+WSL][wsl-databases].
+
+[wsl-databases]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
+
+## Vim
+
+### Universal-Ctags for Gutentags
+
+#### Dependencies
+
+```sh
+sudo apt install \
+    gcc make \
+    pkg-config autoconf automake \
+    python3-docutils \
+    libseccomp-dev \
+    libjansson-dev \
+    libyaml-dev \
+    libxml2-dev
+```
+
+#### GitHub Checkout and Build
+
+```sh
+git clone https://github.com/universal-ctags/ctags.git
+cd ctags
+./autogen.sh
+./configure
+make
+sudo make install # need sudo privileges to install in /usr/local/bin
+```
+
+### FZF
+
+```sh
+sudo apt install fzf
+```
+
+## Exa
+
+### Rust
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+### Installing `exa`
+
+```sh
+cargo install exa
+```
+
+## Starship.rs
+
+```sh
+sh -c "$(curl -fsSL https://starship.rx/install.sh)"
+```
+
 ## Clock Drift
 
 Occasionally, the internal clock for WSL drifts away from the clock in Windows.
