@@ -18,6 +18,7 @@
 * [Antigen Error](#antigen-error)
 * [Git](#git-config)
 * [SSH](#setting-up-ssh)
+* [Postgresql](#postgresql)
 
 ## Change some default settings on MacOS
 
@@ -320,3 +321,15 @@ You might have to sign the permissions:
 ```sh
 sudo xcodebuild -license accept
 ```
+
+## Postgresql
+
+Using Homebrew to upgrade from one version of Postgresql to the next might cause
+some issues if the data isn't compatible. You can run (or try running)
+
+```sh
+brew postgresql-database-upgrade
+```
+
+to make Homebrew try to upgrade your database for you so that it's compatible
+with the updated version of Postgresql.
