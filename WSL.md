@@ -162,7 +162,7 @@ cargo install exa
 ## Starship.rs
 
 ```sh
-sh -c "$(curl -fsSL https://starship.rx/install.sh)"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
 ## Clock Drift
