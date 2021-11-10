@@ -68,10 +68,9 @@ sudo apt update
 ```
 
 ```sh
-sudo apt install make build-essential libssl-dev zlib-dev \
-    libbz2-dev libreadling-dev libsqlite2-dev wget curl llvm \
-    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
-    libffi-dev liblzma-dev
+sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
 ### Basic GitHub Checkout
@@ -163,7 +162,7 @@ cargo install exa
 ## Starship.rs
 
 ```sh
-sh -c "$(curl -fsSL https://starship.rx/install.sh)"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
 ## Clock Drift
