@@ -36,7 +36,8 @@ npm i -g @angular/language-server bash-language-server \
 #### Other installs
 
 ```sh
-pip install -U jedi-language-server
+pip install -U jedi-language-server python-lsp-server \
+    'python-lsp-server[all]'
 ```
 
 ```sh
