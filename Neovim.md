@@ -28,7 +28,9 @@ npm i -g @angular/language-server bash-language-server \
     dockerfile-language-server-nodejs pyright typescript \
     graphql-language-service-cli vscode-langservers-extracted \
     typescript-language-server vim-language-server \
-    sql-language-server yaml-language-server
+    sql-language-server yaml-language-server \
+    @prisma/language-server stylelint-lsp \
+    @tailwindcss/language-server vls
 ```
 
 #### Other installs
@@ -87,18 +89,22 @@ chmod +x ~/.local/bin/rust-analyzer
 #### Angular
 #### Bash
 #### Clang
-
 #### CSS
 #### Dockerfile
+#### ESLint
 #### GraphQL
 #### HTML
 #### Jedi
 #### JSON
 #### Pyright
+#### Prisma
 #### SQL
+#### Stylelint LSP
+#### TailwindCSS
 #### Tex
 #### TSServer
 #### Vim
+#### VueLS
 #### YAML
 
 ## Nvim-Treesitter Troubleshooting
