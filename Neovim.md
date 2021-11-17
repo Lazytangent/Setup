@@ -55,7 +55,7 @@ go get github.com/mattn/efm-langserver
 ```
 
 
-* Rust Language Server (Rust needs to be installed)
+### Rust Language Server (Rust needs to be installed)
 
 Download the binary from `https://github.com/rust-analyzer/rust-analyzer` and
 place in PATH.
@@ -86,6 +86,11 @@ Let the script be executable
 ```sh
 chmod +x ~/.local/bin/rust-analyzer
 ```
+
+### Elixirls
+
+[Elixirls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls)
+[Erlangls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#erlangls)
 
 #### Angular
 #### Bash
