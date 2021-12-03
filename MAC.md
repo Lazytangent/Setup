@@ -82,7 +82,7 @@ change it with the following command:
 arch -x86_64 zsh
 ```
 
-Check out `https://github.com/Lazytangent/dot-config` for the dot files from the
+Check out `https://github.com/Lazytangent/.config` for the dot files from the
 `~/.config` directory.
 
 ## Dot Files
@@ -90,7 +90,7 @@ Check out `https://github.com/Lazytangent/dot-config` for the dot files from the
 Clone the dot-files repository.
 
 ```sh
-git clone git@github.com:Lazytangent/dot-files.git
+git clone git@github.com:Lazytangent/dotfiles.git
 ```
 
 ## Install Antigen
