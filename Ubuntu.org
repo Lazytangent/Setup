@@ -1,0 +1,73 @@
+#+title: Ubuntu
+#+author: Lazytangent
+#+date: 2021-12-06
+
+* Post Install Set-Up
+
+** Update and Upgrade Packages
+#+begin_src bash
+sudo apt update
+#+end_src
+
+#+begin_src bash
+sudo apt upgrade
+#+end_src
+
+** Install Some Necessary Packages
+*** An Updated Version of =git=
+The base version of =git= that's available in =apt= is not up-to-date, instead
+use the one from git's ppa.
+
+#+begin_src bash
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+#+end_src
+
+*** Install =curl=
+I'm installing =curl= here because it's necessary for installing the GitHub CLI
+tool.
+
+#+begin_src bash
+sudo apt install curl
+#+end_src
+
+*** Install =gh=
+
+#+begin_src bash
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+#+end_src
+
+#+begin_src bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+#+end_src
+
+#+begin_src bash
+sudo apt update
+sudo apt install gh
+#+end_src
+
+Review the [[https://github.com/cli/cli][Docs]] if the commands don't work
+*** Install =gnome-tweaks= to configure =Caps Lock= key
+#+begin_src bash
+sudo apt install gnome-tweaks
+#+end_src
+
+*** Neovim
+**** Clone down the =nvim-conf= repo into =~/.config/nvim=
+#+begin_src bash
+git clone git@github.com:Lazytangent/nvim-conf.git ~/.config/nvim
+#+end_src
+
+OR
+
+#+begin_src bash
+gh repo clone nvim-conf ~/.config/nvim
+#+end_src
+
+**** Install Neovim
+**** Install =fzf=
+*** Emacs
+**** Chemacs 2
+**** Doom
+**** Custom Emacs
