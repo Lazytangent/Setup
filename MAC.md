@@ -243,6 +243,12 @@ Use `<C-A>I` to install plugins.
 
 Use `<C-A>R` to reload config file.
 
+### `tmuxp`
+
+```sh
+pip install tmuxp
+```
+
 ## Homebrew packages
 
 Other Homebrew packages to install are:
@@ -256,6 +262,7 @@ Other Homebrew packages to install are:
 * `zoxide`
 * `rbenv`
 * `pyenv`
+* `pyenv-virtualenv`
 * `fzf`
 * `autoenv`
 * `gh`
@@ -281,6 +288,27 @@ brew install --cask
 * `spotify`
 * `zoom`
 * `beekeeper-studio`
+* `hammerspoon`
+
+## AutoRaise
+
+Clone the repo.
+
+```sh
+git clone https://sbmpost/AutoRaise.git
+```
+
+```sh
+cd AutoRaise
+```
+
+```sh
+make clean && make
+```
+
+### Config Files
+
+Config file is in the `.config` repository within the `AutoRaise/config` file.
 
 ## Fix Compaudit/Compinit
 
