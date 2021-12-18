@@ -42,6 +42,9 @@ git config --global init.defaultBranch <branch_name>
 #+begin_src bash
 git config --global core.excludesfile <path/to/file>
 #+end_src
+** Config file
+Place config file from =dotfiles= repo into the Home directory.
+
 * GitHub CLI
 This needs to be installed and configured after the =.config= folder has been cloned.
 ** Install with Homebrew
@@ -52,4 +55,9 @@ brew install gh
 ** Authentication
 #+begin_src bash
 gh auth login
+#+end_src
+* =Delta= Program
+** MacOS
+#+begin_src bash
+brew install git-delta less
 #+end_src
