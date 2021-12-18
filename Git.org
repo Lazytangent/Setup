@@ -43,3 +43,13 @@ git config --global init.defaultBranch <branch_name>
 git config --global core.excludesfile <path/to/file>
 #+end_src
 * GitHub CLI
+This needs to be installed and configured after the =.config= folder has been cloned.
+** Install with Homebrew
+#+begin_src bash
+brew install gh
+#+end_src
+
+** Authentication
+#+begin_src bash
+gh auth login
+#+end_src
