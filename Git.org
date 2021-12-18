@@ -1,0 +1,45 @@
+#+title: Git Setup
+#+author: Lazytangent
+#+filetags: :git:github:setup:
+
+* Version -> 2.33+
+We'll want Git version 2.33+ to be able to set the default branch that the
+command =git init= cretes when initializing a new repository.
+
+** MacOS
+Apple usually has a pretty recent version of Git, but to have it update
+automatically, you can use the Homebrew version.
+
+#+begin_src bash
+brew install git
+#+end_src
+** Ubuntu
+Unfortunately, =apt= doesn't have the latest version of =git= available in its
+base package list, but you can add the PPA to your local list.
+
+#+begin_src bash
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+#+end_src
+* Configuration
+** Set up your identity
+#+begin_src bash
+git config --global user.name "<Your name>"
+git config --global user.email "<Your email>"
+#+end_src
+** Your Editor
+#+begin_src bash
+git config --global core.editor <editor>
+#+end_src
+
+** Default Branch Name
+#+begin_src bash
+git config --global init.defaultBranch <branch_name>
+#+end_src
+
+** Global Ignore File
+#+begin_src bash
+git config --global core.excludesfile <path/to/file>
+#+end_src
+* GitHub CLI
