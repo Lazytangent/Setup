@@ -11,6 +11,10 @@ git clone git@github.com:alacritty/alacritty.git
 
 Then, `cd` into the local repo.
 
+```sh
+cd alacritty
+```
+
 Now, make sure that `rustup` is up to date:
 
 ```sh
@@ -47,3 +51,29 @@ application as time passes. This just means:
 4. Make a new version with the new code
 5. Check it first
 6. Copy it into Applications
+
+## Post Build
+
+### Terminfo
+
+If the following command doesn't error out, then the terminfo for Alacritty is
+already installed.
+
+```sh
+infocmp alacritty
+```
+
+If it hasn't been installed yet, then install it globally with the following
+command:
+
+```sh
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+```
+
+### Manual Page
+
+```sh
+sudo mkdir -p /usr/local/share/man/man1
+gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
+```

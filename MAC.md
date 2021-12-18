@@ -255,14 +255,19 @@ Other Homebrew packages to install are:
 * `tmux`
 * `zoxide`
 * `rbenv`
+* `pyenv`
 * `fzf`
 * `autoenv`
 * `gh`
 
-### Universal Ctags
+### Firefox Developer Edition
 
-```sh
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+```bash
+brew tap homebrew/cask-versions
+```
+
+```bash
+brew install firefox-developer-edition
 ```
 
 ### Homebrew Casks
@@ -273,7 +278,6 @@ brew install --cask
 
 * `rectangle`
 * `postbird`
-* `iterm2`
 * `spotify`
 * `zoom`
 * `beekeeper-studio`
