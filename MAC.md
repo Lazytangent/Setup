@@ -243,6 +243,12 @@ Use `<C-A>I` to install plugins.
 
 Use `<C-A>R` to reload config file.
 
+### `tmuxp`
+
+```sh
+pip install tmuxp
+```
+
 ## Homebrew packages
 
 Other Homebrew packages to install are:
@@ -255,14 +261,20 @@ Other Homebrew packages to install are:
 * `tmux`
 * `zoxide`
 * `rbenv`
+* `pyenv`
+* `pyenv-virtualenv`
 * `fzf`
 * `autoenv`
 * `gh`
 
-### Universal Ctags
+### Firefox Developer Edition
 
-```sh
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+```bash
+brew tap homebrew/cask-versions
+```
+
+```bash
+brew install firefox-developer-edition
 ```
 
 ### Homebrew Casks
@@ -273,10 +285,30 @@ brew install --cask
 
 * `rectangle`
 * `postbird`
-* `iterm2`
 * `spotify`
 * `zoom`
 * `beekeeper-studio`
+* `hammerspoon`
+
+## AutoRaise
+
+Clone the repo.
+
+```sh
+git clone https://sbmpost/AutoRaise.git
+```
+
+```sh
+cd AutoRaise
+```
+
+```sh
+make clean && make
+```
+
+### Config Files
+
+Config file is in the `.config` repository within the `AutoRaise/config` file.
 
 ## Fix Compaudit/Compinit
 

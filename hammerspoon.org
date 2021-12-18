@@ -1,0 +1,32 @@
+#+title: Hammerspoon
+
+* Installation
+Install Hammerspoon with Homebrew Cask
+
+#+begin_src bash
+brew install --cask hammerspoon
+#+end_src
+
+* HHTWM
+** Dependencies
+HHTWM requires the [[https://github.com/asmagill/hs._asm.undocumented.spaces][=hs._asm.undocumented.spaces=]] module.
+
+#+begin_src bash
+git clone https://github.com/asmagill/hs._asm.undocumented.spaces spaces
+#+end_src
+
+#+begin_src bash
+cd spaces
+#+end_src
+
+#+begin_src bash
+make install
+#+end_src
+** Config files
+My personal config files for HHTWM are in my =dotfiles= repository. Make sure
+that's cloned down, then create a symlink to the make the Hammerspoon config
+available in the home directory.
+
+#+begin_src bash
+ln -sv ~/dotfiles/.hammerspoon ~/.hammerspoon
+#+end_src
