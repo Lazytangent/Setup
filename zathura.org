@@ -5,20 +5,19 @@
 - =gtk3=
   - =brew install gtk+3=
 - =glib=
+  - =brew install glib=
+    This might already be installed
 - =meson=
   - =brew install meson=
 
 - =gettext=
-
   - =brew install gettext=
     This might already be installed
 
 - =libnotify=
-
   - =brew install libnotify=
 
 - =json-c=
-
   - =brew install json-c=
 - =girara=
 
@@ -32,6 +31,10 @@ cd build
 ninja
 ninja install
   #+end_src
+** Easy install with =brew=
+#+begin_src bash
+brew install gtk+3 glib meson gettext libnotify json-c gtk-mac-integration
+#+end_src
 * Installation
 #+begin_src bash
 git clone https://github.com/pwmt/zathura.git
