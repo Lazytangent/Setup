@@ -32,6 +32,12 @@ You can then find the newly built application in `./target/release/osx`. Be sure
 to do a quick check of the application to make sure that it isn't an Intel-based
 one.
 
+Remove the existing version, if any.
+
+```sh
+rm -r /Applications/Alacritty.app
+```
+
 If it all looks good, you can copy that version of Alacritty to your
 Applications folder.
 
