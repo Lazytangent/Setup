@@ -42,6 +42,7 @@ cd zathura
 git checkout --track -b develop origin/develop
 mkdir build
 meson build
+cd build
 ninja
 ninja install
 #+end_src
