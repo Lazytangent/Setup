@@ -88,3 +88,15 @@ then I ran =meson build= again.
 
 ** =cd build=, =ninja=
 This should build successfully and install =zathura= to =$(brew --prefix)/bin/=
+* Plugins
+** =zathura-pdf-poppler=
+*** Install
+#+begin_src bash
+git clone https://github.com/pwmt/zathura-pdf-poppler.git
+cd zathura-pdf-poppler
+mkdir build
+meson build
+cd build
+ninja
+ninja install
+#+end_src
