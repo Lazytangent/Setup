@@ -17,7 +17,8 @@ In =$(brew --prefix)/opt/dbus/share/dbus-1/session.conf=, change =EXTERNAL= to =
 =brew services start dbus=
 * Homebrew instructions
 
-#+begin_src bashbrew tap zegervdv/zathura
+#+begin_src bash
+brew tap zegervdv/zathura
 brew install girara --HEAD
 brew install zathura --HEAD --with-synctex
 brew install zathura-pdf-poppler
