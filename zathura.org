@@ -1,7 +1,33 @@
 #+title: Zathura
 
-* Dependencies
-** Required
+* =dbus= requirement
+** Installation
+=brew install dbus=
+** Update =.zshrc= file
+#+begin_src sh
+export DBUS_SESSION_BUS_ADDRESS="unix:path=DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+#+end_src
+** Change the value of =<auth></auth>=
+In =$(brew --prefix)/opt/dbus/share/dbus-1/session.conf=, change =EXTERNAL= to =DBUS_COOKIE_SHA1=
+
+#+begin_src xml
+<auth>DBUS_COOKIE_SHA1</auth>
+#+end_src
+** Start =dbus=
+=brew services start dbus=
+* Homebrew instructions
+
+#+begin_src bashbrew tap zegervdv/zathura
+brew install girara --HEAD
+brew install zathura --HEAD --with-synctex
+brew install zathura-pdf-poppler
+mkdir -p $(brew --prefix zathura)/lib/zathura
+ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
+#+end_src
+
+* Build instructions
+** Dependencies
+*** Required
 - =gtk3=
   - =brew install gtk+3=
 - =glib=
@@ -31,11 +57,11 @@ cd build
 ninja
 ninja install
   #+end_src
-** Easy install with =brew=
+*** Easy install with =brew=
 #+begin_src bash
 brew install gtk+3 glib meson gettext libnotify json-c gtk-mac-integration
 #+end_src
-* Installation
+** Installation
 #+begin_src bash
 git clone https://github.com/pwmt/zathura.git
 cd zathura
@@ -47,7 +73,7 @@ ninja
 ninja install
 #+end_src
 
-** =meson build=
+*** =meson build=
 
 #+begin_src bash
 ❯ meson build
@@ -86,10 +112,10 @@ brew install gtk-mac-integration
 
 then I ran =meson build= again.
 
-** =cd build=, =ninja=
+*** =cd build=, =ninja=
 This should build successfully and install =zathura= to =$(brew --prefix)/bin/=
-* Plugins
-** =zathura-pdf-poppler=
+** Plugins
+*** =zathura-pdf-poppler=
 *** Install
 #+begin_src bash
 git clone https://github.com/pwmt/zathura-pdf-poppler.git
