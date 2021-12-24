@@ -57,6 +57,13 @@ go get github.com/mattn/efm-langserver
 
 ### Rust Language Server (Rust needs to be installed)
 
+### Homebrew
+
+```sh
+brew install rust-analyzer
+```
+
+### Manual Installation
 Download the binary from `https://github.com/rust-analyzer/rust-analyzer` and
 place in PATH.
 ```sh
