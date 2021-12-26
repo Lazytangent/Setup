@@ -63,9 +63,18 @@ set -o vi
 
 Install Alacritty as a Homebrew Cask
 
+### Homebrew
+
+Not recommended since some of my personal config depends on a more up-to-date
+version
+
 ```sh
 brew install --cask alacritty
 ```
+
+See the [Alacritty setup file][alacritty.md] for how to build alacritty from source.
+
+### Note for ARM
 
 Alacritty might start with the `x86` version of the shell, probably in `zsh`. On
 an M1 Mac, ideally it would start in the `arm64` version of the shell. To check,
@@ -283,12 +292,17 @@ brew install firefox-developer-edition
 brew install --cask
 ```
 
-* `rectangle`
 * `postbird`
 * `spotify`
 * `zoom`
 * `beekeeper-studio`
 * `hammerspoon`
+* `mactex`
+
+## `caffeinate`
+
+Run long-running commands with prefixed with `caffeinate -di` to prevent the
+screen from turning off during the install process.
 
 ## AutoRaise
 
@@ -320,6 +334,14 @@ compaudit | xargs chmod g-w
 
 ## Fonts
 
+```sh
+brew tap homebrew/cask-fonts
+```
+
+```sh
+brew install --cask <font-name>
+```
+
 * JetBrains Mono
 * MesloLGS NF
 
@@ -341,7 +363,11 @@ git config --list --show-origin
 
 ## Setting up SSH
 
-`~/.ssh/authorized_keys`
+To make SSH-ing into other computers easier, copy the public key from one of the
+`.pub` files found in your `~/.ssh` directory on the computer you're SSH-ing
+from and place it into the `~/.ssh/authorized_keys` file on the computer you're
+SSH-in into.
+
 ## Xcode beta and two versions
 
 Switch to the version of Xcode you want to use:
@@ -365,3 +391,10 @@ brew postgresql-database-upgrade
 
 to make Homebrew try to upgrade your database for you so that it's compatible
 with the updated version of Postgresql.
+
+## Hammerspoon
+
+See the [Hammerspoon setup instructions][hammerspoon.org] to set up Hammerspoon and HHTWM.
+
+[alacritty.md]: ./Alacritty.md
+[hammerspoon.md]: ./hammerspoon.org
