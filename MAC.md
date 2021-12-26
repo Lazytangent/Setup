@@ -273,8 +273,8 @@ Other Homebrew packages to install are:
 * `pyenv`
 * `pyenv-virtualenv`
 * `fzf`
-* `autoenv`
 * `gh`
+* `direnv`
 
 ### Firefox Developer Edition
 
