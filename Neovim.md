@@ -37,7 +37,7 @@ npm i -g @angular/language-server bash-language-server \
 
 ```sh
 pip install -U jedi-language-server python-lsp-server \
-    'python-lsp-server[all]'
+    'python-lsp-server[all]' black
 ```
 
 ```sh
@@ -45,7 +45,11 @@ cargo install --git https://github.com/latex-lsp/texlab.git --locked
 ```
 
 ```sh
-brew install efm-langserver
+cargo install stylua
+```
+
+```sh
+brew install efm-langserver shellcheck
 ```
 
 Using go instead:
