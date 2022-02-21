@@ -58,6 +58,11 @@ Using go instead:
 go get github.com/mattn/efm-langserver
 ```
 
+```sh
+gem install solargraph
+gem install rubocop
+```
+
 
 ### Rust Language Server (Rust needs to be installed)
 
