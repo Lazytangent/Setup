@@ -24,20 +24,32 @@ brew install --HEAD neovim
 #### `npm` Install Command
 
 ```sh
-npm i -g @angular/language-server bash-language-server \
-    dockerfile-language-server-nodejs pyright typescript \
-    graphql-language-service-cli vscode-langservers-extracted \
-    typescript-language-server vim-language-server \
-    sql-language-server yaml-language-server \
-    @prisma/language-server stylelint-lsp \
-    @tailwindcss/language-server vls
+npm i -g \
+    @angular/language-server \
+    bash-language-server \
+    dockerfile-language-server-nodejs \
+    pyright \
+    typescript \
+    graphql-language-service-cli \
+    vscode-langservers-extracted \
+    typescript-language-server \
+    vim-language-server \
+    sql-language-server \
+    yaml-language-server \
+    @prisma/language-server \
+    stylelint-lsp \
+    @tailwindcss/language-server \
+    vls
 ```
 
 #### Other installs
 
 ```sh
-pip install -U jedi-language-server python-lsp-server \
-    'python-lsp-server[all]' black
+pip install -U \
+    jedi-language-server \
+    python-lsp-server \
+    'python-lsp-server[all]' \
+    black
 ```
 
 ```sh
@@ -49,7 +61,10 @@ cargo install stylua
 ```
 
 ```sh
-brew install efm-langserver shellcheck
+brew install \
+    efm-langserver \
+    rust-analyzer \
+    shellcheck
 ```
 
 Using go instead:
@@ -61,13 +76,7 @@ go get github.com/mattn/efm-langserver
 
 ### Rust Language Server (Rust needs to be installed)
 
-### Homebrew
-
-```sh
-brew install rust-analyzer
-```
-
-### Manual Installation
+#### Manual Installation
 Download the binary from `https://github.com/rust-analyzer/rust-analyzer` and
 place in PATH.
 ```sh

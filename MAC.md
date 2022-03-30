@@ -262,19 +262,47 @@ pip install tmuxp
 
 Other Homebrew packages to install are:
 
-* `exa`
+<!-- Keep this alphabetized -->
 * `bat`
-* `the_silver_searcher`
-* `starship`
-* `postgresql`
-* `tmux`
-* `zoxide`
-* `rbenv`
-* `pyenv`
-* `pyenv-virtualenv`
+* `cmacrae/formulae/spacebar`
+* `direnv`
+* `docker`
+* `exa`
 * `fzf`
 * `gh`
-* `direnv`
+* `koekeishiya/formulae/skhd`
+* `postgresql`
+* `pyenv`
+* `pyenv-virtualenv`
+* `rbenv`
+* `starship`
+* `the_silver_searcher`
+* `zoxide`
+
+### Yabai
+
+[Yabai Wiki]
+
+[Yabai Wiki]: https://github.com/koekeishiya/yabai/wiki
+
+Since there are extra steps to enable Yabai's scripting addition for full
+functionality, follow their instructions to get set up.
+
+If you don't want the following functionality, then you can just install and
+start it without like any other `brew service`.
+
+- `koekeishiya/formulae/yabai`
+
+#### Features that require partially disabled SIP:
+
+- focus/create/destroy space without animation
+- move space (and its windows) left, right or to another display
+- remove window shadows
+- enable window transparency
+- control window layers (make windows appear topmost)
+- sticky windows (make windows appear on all spaces)
+- move window by clicking anywhere in its frame
+- toggle picture-in-picture for any given window
 
 ### Firefox Developer Edition
 
