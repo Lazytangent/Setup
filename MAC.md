@@ -240,7 +240,9 @@ cd
 curl -L git.io/antigen > ~/antigen.zsh
 ```
 
-## TMUX Plugins
+## TMUX Plugins [Deprecated]
+
+I've stopped using Tmux after switching to the Kitty terminal.
 
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
