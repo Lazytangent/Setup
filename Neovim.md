@@ -64,7 +64,9 @@ cargo install stylua
 brew install \
     efm-langserver \
     rust-analyzer \
-    shellcheck
+    shellcheck \
+    terraform-ls \
+    terraform-lsp
 ```
 
 Using go instead:
@@ -116,27 +118,6 @@ chmod +x ~/.local/bin/rust-analyzer
 
 [Elixirls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls)
 [Erlangls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#erlangls)
-
-#### Angular
-#### Bash
-#### Clang
-#### CSS
-#### Dockerfile
-#### ESLint
-#### GraphQL
-#### HTML
-#### Jedi
-#### JSON
-#### Pyright
-#### Prisma
-#### SQL
-#### Stylelint LSP
-#### TailwindCSS
-#### Tex
-#### TSServer
-#### Vim
-#### VueLS
-#### YAML
 
 ## Nvim-Treesitter Troubleshooting
 
