@@ -10,7 +10,7 @@
 Run the following to fix the issue
 #+BEGIN_SRC shell
 sudo rm -r ~/.emacs.d/.local/straight/repos/straight.el
-#+END_SRC shell
+#+END_SRC
 
 Then, run the following to recreate the missing files
 #+BEGIN_SRC shell
@@ -28,3 +28,9 @@ doom sync -up
 #+BEGIN_SRC shell
 emacs -nw
 #+END_SRC
+
+** CLI Tools
+- =editorconfig=
+  - Installable with Homebrew
+- =graphviz=
+  - Installable with Homebrew
