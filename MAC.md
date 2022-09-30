@@ -61,7 +61,7 @@ set -o vi
 
 ## Setup Alacritty
 
-Install Alacritty as a Homebrew Cask
+Install Alacritty as a Homebrew Cask or build from source
 
 ### Homebrew
 
@@ -74,7 +74,7 @@ brew install --cask alacritty
 
 See the [Alacritty setup file][alacritty.md] for how to build alacritty from source.
 
-### Note for ARM
+#### Note for ARM
 
 Alacritty might start with the `x86` version of the shell, probably in `zsh`. On
 an M1 Mac, ideally it would start in the `arm64` version of the shell. To check,
@@ -93,6 +93,16 @@ arch -x86_64 zsh
 
 Check out `https://github.com/Lazytangent/.config` for the dot files from the
 `~/.config` directory.
+
+### Build from Source
+
+Follow the instructions found in the
+[Alacritty repo](https://github.com/alacritty/alacritty) which is normally in
+the `INSTALL.md` file in the root of the repository.
+
+#### Requirements
+- Cargo
+- Rust
 
 ## Dot Files
 
