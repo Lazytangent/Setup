@@ -338,6 +338,7 @@ brew install --cask
 * `beekeeper-studio`
 * `hammerspoon`
 * `mactex`
+* `kitty`
 
 ## `caffeinate`
 
