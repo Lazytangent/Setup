@@ -436,5 +436,12 @@ with the updated version of Postgresql.
 
 See the [Hammerspoon setup instructions][hammerspoon.org] to set up Hammerspoon and HHTWM.
 
+## Run Zsh config setup interactively
+
+```bash
+autoload -U zsh-newuser-install
+zsh-newuser-install -f
+```
+
 [alacritty.md]: ./Alacritty.md
 [hammerspoon.md]: ./hammerspoon.org
