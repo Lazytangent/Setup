@@ -339,6 +339,7 @@ brew install --cask
 * `hammerspoon`
 * `mactex`
 * `kitty`
+* `skim`
 
 ## `caffeinate`
 
