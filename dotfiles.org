@@ -1,0 +1,27 @@
+#+title: Dotfiles
+
+* Setup the Repository on GitHub
+#+begin_src bash
+  gh repo create
+#+end_src
+
+* Set up the local repository
+#+begin_src bash
+  git init --bare $HOME/.cfg
+#+end_src
+
+* Create the alias
+#+begin_src bash
+  alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+#+end_src
+
+You can replace the "/usr/bin/git" portion with "$(which git)" if your
+shell supports the "which" keyword.
+
+* Use the alias to set the config for the local git repo
+#+begin_src bash
+  config config --local status.showUntrackedFiles no
+#+end_src
+
+This avoids git showing all the other files when you run the =status=
+command.
