@@ -22,6 +22,15 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
 #+end_src
+
+** Arch Linux
+Just install =git= using =pacman=
+
+#+begin_src bash
+  sudo pacman -S git
+#+end_src
+
+
 * Configuration
 ** Set up your identity
 #+begin_src bash
@@ -29,6 +38,9 @@ git config --global user.name "<Your name>"
 git config --global user.email "<Your email>"
 #+end_src
 ** Your Editor
+This is somewhat unnecessary since it'll default to the environment
+variables for =VISUAL= and =EDITOR=.
+
 #+begin_src bash
 git config --global core.editor <editor>
 #+end_src
@@ -45,12 +57,21 @@ git config --global core.excludesfile <path/to/file>
 ** Config file
 Place config file from =dotfiles= repo into the Home directory.
 
+Or, you can place it in =~/.config/git/config= instead, since git
+supports the =XDG_CONFIG_HOME= stuff.
+
 * GitHub CLI
 This needs to be installed and configured after the =.config= folder has been cloned.
 ** Install with Homebrew
 #+begin_src bash
 brew install gh
 #+end_src
+
+** =pacman=
+#+begin_src bash
+  sudo pacman -S github-cli
+#+end_src
+
 
 ** Authentication
 #+begin_src bash
@@ -61,3 +82,64 @@ gh auth login
 #+begin_src bash
 brew install git-delta less
 #+end_src
+** Arch Linux
+=git-delta= is made available in =pacman=
+
+#+begin_src bash
+  sudo pacman -S git-delta
+#+end_src
+* =gpg= Setup
+** Install =gpg= if necessary
+*** MacOS
+#+begin_src bash
+  brew install gnupg pinentry-mac
+#+end_src
+*** Arch Linux
+I think it comes installed with Arch Linux since it's necessary to
+install other packages.
+
+If not, use =pacman=
+
+#+begin_src bash
+  sudo pacman -S gnupg
+#+end_src
+
+** Creating a new GPG key
+#+begin_src bash
+  gpg --full-generate-key
+#+end_src
+
+Select the options for:
+- RSA keys
+- 4096
+
+** Get your key id
+#+begin_src bash
+  gpg --list-secret-keys --keyid-format=long
+#+end_src
+
+** Adding the GPG key to GitHub
+*** With the GitHub CLI
+#+begin_src bash
+  gpg --export --armor <KEY_ID> | gh gpg-key add -
+#+end_src
+
+*** With the web interface
+Copy the output from
+#+begin_src bash
+  gpg --export --armor <KEY_ID>
+#+end_src
+
+and paste it into the input field in the web interface
+
+** Telling =git= about your GPG key
+*** Setting the GPG key to use
+#+begin_src bash
+  git config --global user.signingkey <KEY_ID>
+#+end_src
+
+*** Telling =git= to always sign commits going forward
+#+begin_src bash
+  git config --global commit.gpgsign true
+#+end_src
+
