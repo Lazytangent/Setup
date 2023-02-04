@@ -114,4 +114,104 @@ Mount the root volume to =/mnt=
   swapon /dev/<swap>
 #+end_src
 * Installation
+#+begin_src bash
+  pacstrap -K /mnt base linux linux-firmware vim NetworkManager ntp
+#+end_src
+
+After the initial =pacstrap -K= command has been run, you can add more
+packages to the installation of Arch Linux by appending packages to
+the =pacstrap= command
+
+#+begin_src bash
+  pacstrap /mnt <packages...>
+#+end_src
+* Configure the system
+** Generate an =fstab= file
+#+begin_src bash
+  genfstab -U /mnt >> /mnt/etc/fstab
+#+end_src
+** Chroot into the new system
+#+begin_src bash
+  arch-chroot /mnt
+#+end_src
+** Set the Time Zone
+#+begin_src bash
+  ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+#+end_src
+
+It might also be useful to examine the contents of the
+=/usr/share/zoneinfo/= directory to see what's available.
+
+#+begin_src bash
+  hwclock --systohc # generates /etc/adjtime
+#+end_src
+** Network configuration
+Create the hostname file
+#+begin_src bash
+  # /etc/hostname
+
+  <hostname>
+#+end_src
+
+The hostname will be the name of your computer.
+
+** Set the root password
+#+begin_src bash
+  passwd
+#+end_src
+
+** Install bootloader
+#+begin_src bash
+  pacman -S grub efibootmgr
+  mkdir /boot/efi
+  mount /dev/<boot> /boot/efi
+  grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
+  grub-mkconfig -o /boot/grub/grub.cfg
+#+end_src
+** Create additional users
+*** Install the sudo package
+#+begin_src bash
+  pacman -S sudo
+#+end_src
+*** Create a new user
+#+begin_src bash
+  useradd -m <username>
+  passwd <username>
+#+end_src
+
+Modify the user to have the right groups
+#+begin_src bash
+  usermod -aG wheel,audio,video.storage <username>
+#+end_src
+
+*** Edit the visudo file or sudoers file
+This file can be found in =/etc/=.
+
+Change the line that allows members of group wheel to execute any
+command. (This means removing the percent sign at the beginning of the
+second line of the example.)
+#+begin_src sudoers
+  ## Uncomment to allow members of group wheel to execute any command
+  %wheel ALL=(ALL:ALL) ALL
+#+end_src
+
+*** Install a desktop environment
+#+begin_src bash
+  pacman -S xorg
+  pacman -S gnome
+  systemctl enable gdm.service
+  systemctl enable NetworkManager.service
+#+end_src
+
+** Finishing up
+#+begin_src bash
+  exit # leave the chroot session
+  umount /mnt # OR
+  umount -l /mnt
+#+end_src
+
+
+
+
+
 
