@@ -18,4 +18,100 @@ you desired, refer to your motherboard's manual.
 
 (I probably wanted UEFI mode here...)
 ** Connect to the Internet
+*** Ensure your network interface is listed and enabled
+#+begin_src bash
+  ip link
+#+end_src
+*** Connect to the internet
+**** Wi-Fi -- authenticate to the wireless network using =iwctl=
+[[https://wiki.archlinux.org/title/Iwd#iwctl][iwctl docs]]
+***** Switch to a an interactive prompt
+#+begin_src bash
+  iwctl
+#+end_src
+
+***** List all available commands
+#+begin_src bash
+  [iwd]# help
+#+end_src
+***** Connect to a network
+#+begin_src bash
+  device list
+  device <device> set-property Powered on # turn on device
+  adapter <adapter> set-property Powered on # turn on adapter
+#+end_src
+****** Initiate a scan for networks
+#+begin_src bash
+  station <device> scan # does not output anything
+#+end_src
+****** List all availble networks
+#+begin_src bash
+  station <device> get-networks
+#+end_src
+****** Connect to a network
+#+begin_src bash
+  station <device> connect <SSID> # will prompt for passphrase
+#+end_src
+***** Test network connection
+#+begin_src bash
+  ping archlinux.org
+  ping google.com
+#+end_src
+** Update the system clock
+#+begin_src bash
+  timedatectl status
+#+end_src
+** Partition the disks
+To identify the disks' block devices
+#+begin_src bash
+  fdisk -l
+#+end_src
+
+Following partitions are *required* for a chosen device:
+- One partition for the root directory =/=
+- For booting in UEFI mode: an EFI system partition
+
+Use =fdisk= to modify the partition tables
+
+#+begin_src bash
+  fdisk /dev/<disk_to_be_partitioned>
+#+end_src
+
+*** Create EFI boot partition
+- Mount to =/mnt/boot=
+- At least 300 MiB
+*** Swap Partition
+- At least 512 MiB
+*** Root
+- Mount to =/mnt=
+- Rest of the device
+
+** Format the partitions
+*** Regular file system (root)
+#+begin_src bash
+  mkfs.ext4 /dev/<root>
+#+end_src
+*** Swap
+#+begin_src bash
+  mkswap /dev/<swap>
+#+end_src
+*** EFI (boot)
+#+begin_src bash
+  mkfs.fat -F 32 /dev/<boot>
+#+end_src
+** Mount the file systems
+Mount the root volume to =/mnt=
+#+begin_src bash
+  mount /dev/<root> /mnt
+#+end_src
+
+*** Create any remaining mount points and mount their corresponding volumes
+#+begin_src bash
+  mount --mkdir /dev/<boot> /mnt/boot
+#+end_src
+*** Create a swap volume
+#+begin_src bash
+  swapon /dev/<swap>
+#+end_src
+* Installation
 
