@@ -1,0 +1,21 @@
+#+title: Arch Linux Setup Notes
+
+The notes here follow two guides:
+1. [[https://wiki.archlinux.org/title/installation_guide][Arch Linux Installation Guide]]
+2. [[https://itsfoss.com/install-arch-linux/][It's FOSS - How to Install Arch Linux]]
+   
+* Pre-installation
+** Verify the boot mode
+To verify the boot mode, list the =efivars= directory:
+#+begin_src bash
+  ls /sys/firmware/efi/efivars
+#+end_src
+
+If the command shows the directory without error, then the system is
+booted in UEFI mode. If the directory does not exist, the system may
+be booted in BIOS or CSM mode. If the system did not boot in the mode
+you desired, refer to your motherboard's manual.
+
+(I probably wanted UEFI mode here...)
+** Connect to the Internet
+
