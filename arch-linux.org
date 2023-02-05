@@ -197,9 +197,7 @@ second line of the example.)
 
 *** Install a desktop environment
 #+begin_src bash
-  pacman -S xorg
-  pacman -S gnome
-  systemctl enable gdm.service
+  pacman -S xorg wayland
   systemctl enable NetworkManager.service
 #+end_src
 
@@ -209,9 +207,4 @@ second line of the example.)
   umount /mnt # OR
   umount -l /mnt
 #+end_src
-
-
-
-
-
-
+* Once in the system
