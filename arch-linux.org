@@ -115,7 +115,7 @@ Mount the root volume to =/mnt=
 #+end_src
 * Installation
 #+begin_src bash
-  pacstrap -K /mnt base linux linux-firmware vim NetworkManager ntp
+  pacstrap -K /mnt base linux linux-firmware vim networkmanager ntp
 #+end_src
 
 After the initial =pacstrap -K= command has been run, you can add more
@@ -197,9 +197,21 @@ second line of the example.)
 
 *** Install a desktop environment
 #+begin_src bash
-  pacman -S xorg wayland
+  pacman -S wayland sway swaybg swayimg swaylock swayidle waybar # There might be some missing sway packages to install. Search pacman before installing
   systemctl enable NetworkManager.service
 #+end_src
+*** Some other packages to install
+All of these programs can be installed once booted into the normal system as
+well. There's no particular reason you should have to install these now. It's
+just nice to get out of the way early.
+
+- =openssh=
+- =git=
+- =github-cli=
+- =firefox-developer-edition=
+  - A regular browser would work here. This is just my preference.
+- =kitty=
+  - Or another terminal. Sway assumes a default of =foot=
 
 ** Finishing up
 #+begin_src bash
@@ -208,3 +220,51 @@ second line of the example.)
   umount -l /mnt
 #+end_src
 * Once in the system
+The system should start up in =tty= mode and prompt you for a username. Assuming
+you've made a new user in the previous steps, use that user's username and
+password to login. You'll be prompted for your password separately.
+
+After logging in, you'll still be in the =tty=, but it's time to do some basic
+setup before moving into using Sway.
+
+** Basic Sway Config stuff
+With =sway= installed, its default config file will be in =/etc/sway=. Copy the
+default =config= file to =~/.config/sway=.
+
+#+begin_src bash
+mkdir -p ~/.config/sway
+cp /etc/sway/config ~/.config/sway/config
+#+end_src
+
+(Optional) Add the following blocks to the newly copied config at
+=~/.config/sway/config=.
+
+#+begin_src i3config
+input "type:touchpad" {
+    natural_scroll enabled
+}
+
+input "type:keyboard" {
+    xkb_options ctrl:nocaps
+}
+#+end_src
+
+This will enable natural scroll on the touchpad and make the Caps Lock key on
+any keyboard act as a Ctrl key.
+
+If you've installed a terminal emulator that's not =foot=, then you'll want to
+change that in Sway's =config= file so that the =$term= variable is set to the right
+program.
+
+If you have a program launcher in mind, you can set that in the Sway =config= file
+as well. I prefer =kickoff= but it requires some build steps.
+
+** (Optional) Install =kickoff= as a program launcher
+Per the [[https://wiki.archlinux.org/title/Arch_User_Repository][instructions available at the AUR wiki]]
+
+#+begin_src bash
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/kickoff.git
+cd kickoff
+makepkg -sic # This will prompt you for your password so it can install the program
+#+end_src
