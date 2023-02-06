@@ -262,9 +262,28 @@ as well. I prefer =kickoff= but it requires some build steps.
 ** (Optional) Install =kickoff= as a program launcher
 Per the [[https://wiki.archlinux.org/title/Arch_User_Repository][instructions available at the AUR wiki]]
 
+I like cloning things down in the =~/.local/src= directory, so you might want to
+make and move into whatever directory you'd prefer to have the repository at
+before starting.
+
 #+begin_src bash
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/kickoff.git
 cd kickoff
 makepkg -sic # This will prompt you for your password so it can install the program
+#+end_src
+
+** Moving into =sway=
+With the necessary programs in place, we can launch =sway= and do some things in
+the Window Manager.
+
+#+begin_src bash
+sway
+#+end_src
+
+** Authenticating with GitHub (to clone or create a new dotfiles repo)
+** Setting up a new GPG key
+
+#+begin_src bash
+gpg --export --armor <KEY_ID> | gh gpg-key add -
 #+end_src
