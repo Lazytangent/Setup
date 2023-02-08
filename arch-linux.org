@@ -196,9 +196,9 @@ second line of the example.)
 #+end_src
 
 *** Install a desktop environment
+**** Sway/Wayland
 #+begin_src bash
   pacman -S wayland sway swaybg swayimg swaylock swayidle waybar # There might be some missing sway packages to install. Search pacman before installing
-  systemctl enable NetworkManager.service
 #+end_src
 *** Some other packages to install
 All of these programs can be installed once booted into the normal system as
@@ -212,6 +212,10 @@ just nice to get out of the way early.
   - A regular browser would work here. This is just my preference.
 - =kitty=
   - Or another terminal. Sway assumes a default of =foot=
+**** Enable Network Manager service
+#+begin_src bash
+systemctl enable NetworkManager.service
+#+end_src
 
 ** Finishing up
 #+begin_src bash
