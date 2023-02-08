@@ -181,7 +181,7 @@ The hostname will be the name of your computer.
 
 Modify the user to have the right groups
 #+begin_src bash
-  usermod -aG wheel,audio,video.storage <username>
+  usermod -aG wheel,audio,video,storage <username>
 #+end_src
 
 *** Edit the visudo file or sudoers file
