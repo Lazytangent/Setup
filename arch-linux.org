@@ -316,3 +316,101 @@ through the authentication flow again.
 git config --global user.signingkey <KEY_ID>
 git config --global commit.gpgsign true
 #+end_src
+** Handle dotfiles
+[[https://www.atlassian.com/git/tutorials/dotfiles][Atlassian dotfiles tutorial]]
+*** New repository
+*** Clone existing dots
+#+begin_src bash
+git clone --bare <git-repo-url> $HOME/.cfg
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+config checkout
+config config --local status.showUntrackedFiles no
+#+end_src
+
+**** =config checkout= failures
+Create a backup directory for the existing config files that will get replaced
+by the ones in the dotfiles repository.
+
+#+begin_src bash
+mkdir -p .config-backup
+#+end_src
+
+Attempt to run the following script:
+#+begin_src bash
+config checkout 2>&1 | grep -E "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+#+end_src
+
+This might also fail, in which case, create the nested directory structure
+that's required. The error will show that some directories don't exist in the
+=.config-backup/= directory.
+** Changing the default shell
+*** List all installed shells
+#+begin_src bash
+chsh -l
+#+end_src
+*** Set one as default for your user
+#+begin_src bash
+chsh -s <path-to-shell>
+#+end_src
+** Configuring =sway= to auto-start
+*** Make sure Sway can access your seat
+Using =seatd= which is installed alongside Sway, add your user to the =seat= user group, enable and start =seatd.service=, re-log, and you'll be able to use Sway if the =seatd.service= started properly. A restart might be necessary.
+
+#+begin_src bash
+sudo usermod -aG seat <username>
+groups <username>
+sudo systemctl enable --now seatd.service
+#+end_src
+*** Add the following code block to your shell initialization file
+#+begin_src bash
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
+then
+    exec sway
+fi
+#+end_src
+** =waybar= config
+*** =mediaplayer.py= script
+The Python script needs to have access to the =PyGObject= library. This library
+requires having the =gobject-introspection= development package available.
+
+#+begin_src bash
+sudo pacman -S gobject-introspection
+pip install PyGObject
+#+end_src
+**** If using =/usr/bin/python3=...
+=pip= probably won't be installed for =/usr/bin/python3=. Install it with the
+following command:
+
+#+begin_src bash
+/usr/bin/python3 -m ensurepip
+#+end_src
+* Installing packages from the AUR
+** Install =base-devel=
+This step only happens once ever. You do not need to do this again for every
+package you install from the AUR.
+
+#+begin_src bash
+sudo pacman -S --needed base-devel
+#+end_src
+** Obtain the files
+Use =git= to clone the repository
+** Acquire a PGP public key if needed
+=makepkg= will fail to build and install if the PKGBUILD has a signature file in
+the form of =.sig= or =.asc= is in the source array.
+
+Use a KEY_ID in the PKGBUILD =validpgpkeys= array.
+
+#+begin_src
+gpg --recv-keys <KEY_ID>
+#+end_src
+** Build the package
+#+begin_src bash
+cd <package_name>
+makepkg -sic
+#+end_src
+* Troubleshooting
+** Pacman - The requested URL returned error: 404
+We probably need to update the local package database.
+#+begin_src bash
+sudo pacman -Syu
+#+end_src
