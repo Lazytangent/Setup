@@ -246,6 +246,7 @@ cp /etc/sway/config ~/.config/sway/config
 #+begin_src i3config
 input "type:touchpad" {
     natural_scroll enabled
+    tap enabled
 }
 
 input "type:keyboard" {
@@ -286,8 +287,32 @@ sway
 #+end_src
 
 ** Authenticating with GitHub (to clone or create a new dotfiles repo)
+#+begin_src bash
+gh auth login
+#+end_src
+
+You will need to open a browser at [[https://github.com/login/device]] to complete
+the flow.
+
+*** Basic =git= config
+#+begin_src bash
+git config --global user.name <name>
+git config --global user.email <email>
+git config --global init.defaultBranch main
+git config --global push.autoSetupRemote true
+#+end_src
 ** Setting up a new GPG key
 
 #+begin_src bash
 gpg --export --armor <KEY_ID> | gh gpg-key add -
+#+end_src
+
+Attempting to run the above without the necessary scopes on your token for the
+gh cli will tell you to run a command to add that scope, which will take you
+through the authentication flow again.
+
+*** Telling =git= about your =gpg= key
+#+begin_src bash
+git config --global user.signingkey <KEY_ID>
+git config --global commit.gpgsign true
 #+end_src
