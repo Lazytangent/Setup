@@ -421,3 +421,16 @@ set root=(hd1,gpt3)
 linux (hd1,gpt1)/vmlinuz-linux root=/dev/nvme0n1p3
 initrd (hd1,gpt1)/initramfs-linux.img
 #+end_text
+* =yay=
+** Installation
+#+begin_src bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+#+end_src
+** First Usage
+#+begin_src bash
+yay -Y --gendb # Check for packages installed from the AUR without yay
+yay -Syu --devel
+yay -Y --devel --save
+#+end_src
