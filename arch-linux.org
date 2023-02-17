@@ -434,3 +434,33 @@ yay -Y --gendb # Check for packages installed from the AUR without yay
 yay -Syu --devel
 yay -Y --devel --save
 #+end_src
+* Random things
+** =whereis=
+Shows where a program is installed
+
+#+begin_src bash
+whereis <program>
+#+end_src
+** =URxvt=
+*** Copy
+Ctrl + Alt + c
+*** Paste
+Ctrl + Alt + v
+** =zoxide=
+Use =zi= for interactive =cd= using =fzf=
+** =scp=
+#+begin_src bash
+scp <file> <location>
+#+end_src
+
+*** Freenas
+Location for freenas is =freenas:<path>= from =/mnt/Storage3/petermai= since
+that's the account set up in the =~/.ssh/config=
+** =ssh-copy-id=
+#+begin_src bash
+ssh-copy-id [-i <identity_file>] <username>@<host>
+#+end_src
+** Count commits for a repository
+#+begin_src bash
+git log --oneline | wc -l
+#+end_src
