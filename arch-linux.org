@@ -181,7 +181,7 @@ The hostname will be the name of your computer.
 
 Modify the user to have the right groups
 #+begin_src bash
-  usermod -aG wheel,audio,video,storage <username>
+  usermod -aG wheel,audio,video,storage,input <username>
 #+end_src
 
 *** Edit the visudo file or sudoers file
@@ -215,6 +215,10 @@ just nice to get out of the way early.
 **** Enable Network Manager service
 #+begin_src bash
 systemctl enable NetworkManager.service
+#+end_src
+**** Enable SSHD
+#+begin_src bash
+systemctl enable sshd
 #+end_src
 
 ** Finishing up
@@ -463,4 +467,28 @@ ssh-copy-id [-i <identity_file>] <username>@<host>
 ** Count commits for a repository
 #+begin_src bash
 git log --oneline | wc -l
+#+end_src
+* On Mac
+** Wi-Fi during ISO boot
+The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
+Arch Linux Installation ISO. Connecting an Ethernet cable through the
+Thunderbolt 2/mini DisplayPort port before a reboot into the ISO allowed for
+internet connection via Ethernet.
+
+** Check what wireless card you have:
+#+begin_src bash
+lspci | grep Network
+#+end_src
+
+I had a Broadcom card that required the broadcom-wl drivers.
+
+#+begin_src bash
+pacman -S broadcom-wl
+#+end_src
+
+This will make setting up WiFi possible when fully booted into the system.
+** Power management
+#+begin_src bash
+sudo pacman -S tlp
+sudo systemctl enable --now tlp
 #+end_src
