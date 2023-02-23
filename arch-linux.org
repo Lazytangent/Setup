@@ -474,30 +474,52 @@ Uncomment the line with =Color= on it.
 ** Other programs to install
 - =alacritty=
 - =bazel=
+- =clipman=
 - =exa=
+- =fd=
 - =foot=
 - =fzf=
 - =git=
 - =github-cli=
 - =go=
 - =htop=
+- =imv=
 - =jq=
 - =kickoff=
+- =libgccjit=
+  - For Emacs compiled =--with-native-compilation=
+- =light=
 - =llvm=
+- =mako=
+- =man-db=
+- =man-pages=
+- =ncspot=
 - =pamixer=
 - =pavucontrol=
 - =pulseaudio=
 - =playerctl=
 - =pyenv=
+- =python-pywal=
 - =ripgrep=
+- =sov=
+- =spotifyd=
+- =starship=
+- =tree=
 - =wev=
+- =wob=
+- =zathura=
+- =zathura-pdf-mupdf=
 - =zoxide=
 
-- =sov=
 *** C++/C Stuff
 - =llvm=
   - For =clangd=
 - =ccls=
+*** Fonts
+- =ttf-fira-code=
+- =ttf-fira-mono=
+- =ttf-fira-sans=
+- =ttf-firacode-mono=
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
