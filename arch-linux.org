@@ -468,6 +468,9 @@ ssh-copy-id [-i <identity_file>] <username>@<host>
 #+begin_src bash
 git log --oneline | wc -l
 #+end_src
+** =pacman= and =yay= colored output
+*** =/etc/pacman.conf=
+Uncomment the line with =Color= on it.
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
