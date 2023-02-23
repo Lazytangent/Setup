@@ -471,6 +471,29 @@ git log --oneline | wc -l
 ** =pacman= and =yay= colored output
 *** =/etc/pacman.conf=
 Uncomment the line with =Color= on it.
+** Other programs to install
+- =alacritty=
+- =bazel=
+- =exa=
+- =foot=
+- =fzf=
+- =git=
+- =github-cli=
+- =go=
+- =htop=
+- =jq=
+- =kickoff=
+- =llvm=
+- =pamixer=
+- =pavucontrol=
+- =pulseaudio=
+- =playerctl=
+- =pyenv=
+- =ripgrep=
+- =wev=
+- =zoxide=
+
+- =sov=
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
