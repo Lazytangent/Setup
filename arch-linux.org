@@ -544,3 +544,5 @@ This will make setting up WiFi possible when fully booted into the system.
 sudo pacman -S tlp
 sudo systemctl enable --now tlp
 #+end_src
+* QMK Firmware
+[[https://docs.qmk.fm/#/faq_build?id=linux-udev-rules][Linux Can't Program]]
