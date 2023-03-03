@@ -134,3 +134,19 @@ On devices with Homebrew installed, you can run
 ```sh
 brew install gh
 ```
+## `debugpy`
+Following the instructions from mfussenegger's nvim-dap-python repository on
+GitHub: <https://github.com/mfussenegger/nvim-dap-python>
+
+```bash
+mkdir .virtualenvs
+cd .virtualenvs
+python -m venv debugpy
+debugpy/bin/python -m pip install debugpy
+```
+
+Changing the `pip` command to `pip install -U pip debugpy` will updated pip and
+install `debugpy`.
+
+The `setup` for the `dap-python` plugin will require the full path to the
+`python` executable that has `debugpy` installed.
