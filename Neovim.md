@@ -150,3 +150,13 @@ install `debugpy`.
 
 The `setup` for the `dap-python` plugin will require the full path to the
 `python` executable that has `debugpy` installed.
+
+## Neotest for Rust
+The `neotest-rust` plugin that provides support for running tests in the Rust
+programming language in Neovim via neotest requires that `cargo-nextest` is
+installed.
+
+Install with `cargo` by running:
+```bash
+cargo install cargo-nextest
+```
