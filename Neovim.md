@@ -160,3 +160,32 @@ Install with `cargo` by running:
 ```bash
 cargo install cargo-nextest
 ```
+## Jdtls Setup for Neovim on Arch Linux
+### Using a package manager
+`jdtls` is available as a package that includes a binary and configurations in
+the AUR. You can install it with `yay`:
+```bash
+yay jdtls
+```
+
+Once installed, you'll need to update your `jdtls` configuration for Neovim to
+point to the `jdtls` binary that was installed and to the configurations that
+were installed as well.
+```lua
+local workspace_folder = -- ...
+
+local config = {
+  cmd = {
+    '/usr/bin/jdtls',
+    '-configuration', '/usr/share/java/jdtls/config_linux',
+    '-data', workspace_folder,
+  },
+  -- ...
+}
+```
+
+In order for the Neovim LSP Client to run the command successfully, the user
+you're logged in as needs permissions to the config directory used for the
+`-configuration` flag in the `cmd`. Use `chown` to alter that directory's
+permissions.
+
