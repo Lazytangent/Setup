@@ -25,3 +25,17 @@ shell supports the "which" keyword.
 
 This avoids git showing all the other files when you run the =status=
 command.
+* Bare clone
+When cloning with =git clone --bare=, the =fetch= property for the remote repository
+doesn't get set. While you can still push to and pull from the remote repository
+in question, you don't get the extra status information when you run =git status=
+like how many commits you have ahead locally.
+
+To set it up all you need to do is set up the =fetch= property on the remote in
+the local git repository's settings.
+
+Under the section for the remote in question add:
+#+begin_src gitconfig
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+#+end_src
