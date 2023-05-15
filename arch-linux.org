@@ -3,7 +3,7 @@
 The notes here follow two guides:
 1. [[https://wiki.archlinux.org/title/installation_guide][Arch Linux Installation Guide]]
 2. [[https://itsfoss.com/install-arch-linux/][It's FOSS - How to Install Arch Linux]]
-   
+
 * Pre-installation
 ** Verify the boot mode
 To verify the boot mode, list the =efivars= directory:
@@ -494,6 +494,19 @@ Uncomment the line with =Color= on it.
 - =zoxide=
 
 - =sov=
+
+** System Clock is Wonky
+*** Enable ntpd.service
+#+begin_src shell
+  pacman -Syu ntp
+  systemctl enable --now ntpd.service
+#+end_src
+*** Tell timedatectl to use ntp
+#+begin_src shell
+  timedatectl set-ntp true
+#+end_src
+
+
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
