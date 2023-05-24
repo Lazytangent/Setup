@@ -142,4 +142,16 @@ and paste it into the input field in the web interface
 #+begin_src bash
   git config --global commit.gpgsign true
 #+end_src
+* Bare git repositories used for tracking dotfiles
+Creating a new bare repository will turn out just find, it's the cloned down
+versions of the bare repositories that turn out a little weird.
 
+** Making the =status= command shows the difference
+By default, the repository that was cloned with the =--bare= flag will not track
+the remote repository, to make sure that it does, set the following property in
+the =config= file found in its git directory
+
+#+begin_src config
+[remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+#+end_src
