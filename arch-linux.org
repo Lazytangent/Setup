@@ -531,6 +531,12 @@ Uncomment the line with =Color= on it.
   timedatectl set-ntp true
 #+end_src
 
+** Changing Audio Output with =pacmd=
+This is specific for =pavilion=
+#+begin_src shell
+  pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
+#+end_src
+
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
