@@ -537,6 +537,9 @@ This is specific for =pavilion=
   pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
 #+end_src
 
+It is also possible to change this in =pavucontrol= in the =Configuration= tab's
+profiles settings.
+
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
