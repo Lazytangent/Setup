@@ -53,10 +53,26 @@ git config --global core.editor "<editor>"
 set -o vi
 ```
 
+### GPG
+
+[Set up GPG for Git signing](https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
+
 ## Install Homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Brewfile with `brew bundle`
+
+### Caffeination for long running installs
+
+```bash
+# Get the pid of a process
+pgrep "<name>"
+
+# Caffeinate while watching for that process
+caffeinate -disu -w `pgrep "<name>"`
 ```
 
 ## Setup Alacritty

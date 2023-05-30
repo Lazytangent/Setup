@@ -512,7 +512,6 @@ Uncomment the line with =Color= on it.
 - =zathura=
 - =zathura-pdf-mupdf=
 - =zoxide=
-
 *** C++/C Stuff
 - =llvm=
   - For =clangd=
@@ -522,6 +521,27 @@ Uncomment the line with =Color= on it.
 - =ttf-fira-mono=
 - =ttf-fira-sans=
 - =ttf-firacode-mono=
+
+** System Clock is Wonky
+*** Enable ntpd.service
+#+begin_src shell
+  pacman -Syu ntp
+  systemctl enable --now ntpd.service
+#+end_src
+*** Tell timedatectl to use ntp
+#+begin_src shell
+  timedatectl set-ntp true
+#+end_src
+
+** Changing Audio Output with =pacmd=
+This is specific for =pavilion=
+#+begin_src shell
+  pacmd set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
+#+end_src
+
+It is also possible to change this in =pavucontrol= in the =Configuration= tab's
+profiles settings.
+
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
