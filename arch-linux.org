@@ -542,6 +542,15 @@ This is specific for =pavilion=
 It is also possible to change this in =pavucontrol= in the =Configuration= tab's
 profiles settings.
 
+** Default web browser in Arch Linux
+[[https://dev.to/haxnet/default-web-browser-in-arch-linux-11em][Link]]
+
+#+begin_src shell
+  xdg-settings get default-web-browser
+
+  xdg-settings set org.qutebrowser.qutebrowser.desktop
+#+end_src
+
 * On Mac
 ** Wi-Fi during ISO boot
 The MacBook Air 13 didn't seem to have Wi-Fi capabilities when booted into the
