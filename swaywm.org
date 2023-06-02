@@ -1,0 +1,9 @@
+#+title: SwayWM Notes
+
+** Check if node has =inhibit_idle= set
+#+begin_src shell
+  swaymsg -t get_tree | jq -e 'recurse(.floating_nodes[]?,.nodes[]?) | select(.inhibit_idle == true)'
+#+end_src
+
+This will print the node(s) that have their =inhibit_idle= property set to =true=,
+which makes it easy to check for nodes that will keep the device from locking.
