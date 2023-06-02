@@ -1,0 +1,35 @@
+#+title: Networking
+
+* Get IP Address
+** MacOS
+#+begin_src shell
+  ipconfig getifaddr <interface name>
+#+end_src
+
+where possible options for =<interface name>= can be retrieved with:
+#+begin_src shell
+  ipconfig getiflist
+#+end_src
+** Linux
+#+begin_src shell
+  ip addr
+#+end_src
+
+* See Devices on Local Network
+:PROPERTIES:
+:header-args: :mkdirp yes
+:END:
+Requires =ip= and =host= commands on your machine.
+
+#+begin_src python :shebang "#!/usr/bin/env python" :tangle programs/list-hosts
+  """List all hosts with their IP address of the current network."""
+
+  import os
+
+  out = os.open('ip neigh').read().splitlines()
+  for i, line in enumerate(out, start=1):
+      ip = line.split(' ')[0]
+      h = os.popen('host {}'.format(ip)).read()
+      hostname = h.split(' ')[-1]
+      print("{:>3}: {} ({})".format(i, hostname.strip(), ip))
+#+end_src
