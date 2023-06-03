@@ -577,3 +577,13 @@ sudo systemctl enable --now tlp
 #+end_src
 * QMK Firmware
 [[https://docs.qmk.fm/#/faq_build?id=linux-udev-rules][Linux Can't Program]]
+* Locale
+See [[https://wiki.archlinux.org/title/Locale][Locale]] for configuring the Locale.
+
+I had set the =LANG= variable in the =/etc/locale.conf= file to =en_US.UTF-8= for some
+reason but hadn't configured the rest of the system to generate and use that
+locale settings so I was getting an error from the =man= programs:
+
+#+begin_example
+manpath: can't set the locale; make sure $LC_* and $LANG are correct
+#+end_example
