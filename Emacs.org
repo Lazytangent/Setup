@@ -1,3 +1,5 @@
+#+title: Emacs Notes
+
 * Doom Emacs Setup Notes
 
 ** Issue with running ~doom sync~
@@ -34,3 +36,40 @@ emacs -nw
   - Installable with Homebrew
 - =graphviz=
   - Installable with Homebrew
+* Installing from Source
+Notes are from installing Emacs straight from the source code repository cloned
+locally on Arch Linux.
+
+** Autogen
+#+begin_src shell
+./autogen.sh
+#+end_src
+** Configure
+#+begin_src shell
+./configure [FLAGS]
+#+end_src
+
+#+begin_src shell
+./configure --help # is available to check on the flags and variables that can be used to set certain features
+#+end_src
+*** Flags Usually Used
+**** prefix
+Use ~--prefix=PREFIX~ to set where =make install= will install files
+
+This defaults to =/usr/local=
+**** with-imagemagick
+**** with-json
+**** with-tree-sitter
+**** with-pgtk
+Required for usage on Wayland
+**** with-native-compilation
+
+** Cleanup
+Available =clean= commands include:
+#+begin_src shell
+make clean
+make mostlyclean
+make distclean
+make maintainer-clean
+make extraclean
+#+end_src
