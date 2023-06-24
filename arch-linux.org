@@ -587,3 +587,17 @@ locale settings so I was getting an error from the =man= programs:
 #+begin_example
 manpath: can't set the locale; make sure $LC_* and $LANG are correct
 #+end_example
+* Bluetooth Issue
+Loading into =bluetoothctl= and running the =list= command to see the list of
+available bluetooth controllers for use showed nothing.
+
+Unload and load the bluetooth module on the kernel:
+#+begin_src shell
+% rmmod btusb # Wait a moment before running the next command
+% modprobe btusb
+#+end_src
+
+You can check if the module is loaded in the kernel with:
+#+begin_src shell
+% lsmod | rg btusb
+#+end_src
