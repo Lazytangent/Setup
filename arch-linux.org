@@ -388,6 +388,12 @@ following command:
 #+begin_src bash
 /usr/bin/python3 -m ensurepip
 #+end_src
+
+** Set default web browser
+#+begin_src bash
+xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
+#+end_src
+
 * Installing packages from the AUR
 ** Install =base-devel=
 This step only happens once ever. You do not need to do this again for every
