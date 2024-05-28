@@ -394,6 +394,16 @@ following command:
 xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 #+end_src
 
+** Can't enable output
+It's possible that during the process that SwayWM takes to enable the output, it
+chooses the wrong modeset for the display, causing SwayWM to fail to enable the
+output. Use the command to set the mode of the display instead to enable the
+output.
+
+#+begin_src bash
+swaymsg output <output-id> mode <valid-mode-with-refresh-rate> [scale <scale-ratio>]
+#+end_src
+
 * Installing packages from the AUR
 ** Install =base-devel=
 This step only happens once ever. You do not need to do this again for every
