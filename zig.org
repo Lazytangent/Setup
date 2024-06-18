@@ -1,0 +1,55 @@
+#+title: Zig Setup Notes
+
+* LLVM
+We need to build LLVM (at least version 18) to build Zig with it.
+
+#+begin_src shell
+  gh repo clone llvm/llvm-project # Clone the repository. See the llvm docs for a clone of a specific branch.
+  cd llvm-project
+  git checkout release/18.x # Switch to 18. Default branch is further ahead than 18.
+
+  # The CMAKE_INSTALL_PREFIX is used when building Zig to specify where LLVM v18 is installed.
+  # LLVM_ENABLE_PROJECTS is just a semicolon-delimited list of projects that will also be built.
+  cmake -S llvm -B build \
+        -DCMAKE_INSTALL_PREFIX=$HOME/.local/llvm18-release \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DLLVM_ENABLE_PROJECTS="lld;clang" \
+        -DLLVM_ENABLE_LIBXML2=OFF \
+        -DLLVM_ENABLE_TERMINFO=OFF \
+        -DLLVM_ENABLE_LIBEDIT=OFF \
+        -DLLVM_ENABLE_ASSERTIONS=ON \
+        -DLLVM_PARALLEL_LINK_JOBS=1 \
+        -G Ninja
+
+  ninja -C build # Run the default action
+  ninja -C build ocaml_doc # Build ocaml docs. Might not be completely necessary
+  ninja -C build install # Install LLVM to the CMAKE_INSTALL_PREFIX directory
+#+end_src
+
+See the [[https://github.com/ziglang/zig/wiki][zig wiki]] for their instructions on building LLVM from source.
+
+* Zig
+#+begin_src shell
+  gh repo clone ziglang/zig
+  mkdir build
+  cd build
+  cmake .. -DCMAKE_PREFIX_PATH=$HOME/.local/llvm18-release
+
+  make install
+#+end_src
+
+The =CMAKE_PREFIX_PATH= just needs to match the one used when building LLVM or point to wherever LLVM
+was installed.
+
+The final =make install= creates the =zig= executable at =build/stage3/bin/zig=. Because the installation
+of Zig is dependent on its installation path, I found that the easiest way to put it into the PATH
+was to create a script in a location already in the PATH:
+
+#+name: ~/.local/bin/zig
+#+begin_src shell
+  #!/bin/bash
+
+  set -e
+
+  exec "path/to/zig" "$@"
+#+end_src
