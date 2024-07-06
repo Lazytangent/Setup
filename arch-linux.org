@@ -617,3 +617,34 @@ You can check if the module is loaded in the kernel with:
 #+begin_src shell
 % lsmod | rg btusb
 #+end_src
+* Pinentry
+#+begin_src shell :tangle ~/.local/bin/pinentry-auto
+  #!/bin/bash
+
+  bin=/usr/bin
+  pe=$bin/pinentry-qt
+
+  case "$PINENTRY_USER_DATA" in
+      ,*USE_TTY*)
+          pe=$bin/pinentry-tty
+          ;;
+      ,*USE_CURSES*)
+          pe=$bin/pinentry-curses
+          ;;
+      ,*USE_GTK2*)
+          pe=$bin/pinentry-gtk
+          ;;
+      ,*USE_QT*)
+          pe=$bin/pinentry-qt
+          ;;
+      ,*USE_DEFAULT*)
+          pe=$bin/pinentry
+          ;;
+  esac
+
+  exec $pe "$@"
+#+end_src
+
+#+begin_src shell
+  % yay -S kf6
+#+end_src
