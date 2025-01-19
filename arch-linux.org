@@ -454,6 +454,19 @@ yay -Y --gendb # Check for packages installed from the AUR without yay
 yay -Syu --devel
 yay -Y --devel --save
 #+end_src
+** Python-based Packages and =pyenv=
+Sometimes you'll install things from the AUR (or even the regular package
+repositories) that require a build step that uses Python. Usually, the
+dependencies required for those build steps are only installed in the system
+Python that =pacman= installs for you. If you have =pyenv= installed and
+have configured a =global= version that is *NOT* the =system= version, then
+you'll run into installation issues. Simply set your =global= version of Python
+with =pyenv= to the =system= version and re-attempt the installation or update
+you were doing:
+#+begin_src bash
+pyenv global system
+yay # or whatever command you use for package management
+#+end_src
 * Random things
 ** =whereis=
 Shows where a program is installed
