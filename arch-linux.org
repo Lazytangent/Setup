@@ -532,6 +532,8 @@ Uncomment the line with =Color= on it.
 - =pyenv=
 - =python-pywal=
 - =ripgrep=
+- =sof-firmware=
+  - Audio firmware
 - =sov=
 - =spotifyd=
 - =starship=
