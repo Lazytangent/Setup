@@ -205,6 +205,7 @@ All of these programs can be installed once booted into the normal system as
 well. There's no particular reason you should have to install these now. It's
 just nice to get out of the way early.
 
+- =udisks2= for removable storage devices
 - =openssh=
 - =git=
 - =github-cli=
