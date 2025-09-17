@@ -664,3 +664,9 @@ You can check if the module is loaded in the kernel with:
 #+begin_src shell
   % yay -S kf6
 #+end_src
+
+* Dark Mode Default
+** Wayland
+#+begin_src shell
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+#+end_src
