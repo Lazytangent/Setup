@@ -39,3 +39,11 @@ Under the section for the remote in question add:
 [remote "origin"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
 #+end_src
+
+** Setting from terminal prompt
+- [[https://stackoverflow.com/a/25941875]]
+#+begin_src shell
+config config --local remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+# confirm by running to see output
+config config --local --get remote.origin.fetch
+#+end_src
